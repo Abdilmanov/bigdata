@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>Коммунальные службы</title>
+  <link rel="stylesheet" href="https://js.arcgis.com/4.12/esri/css/main.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <script src="https://js.arcgis.com/4.12/"></script>
+  <script src="js/scriptOLD.js"></script>
+  <script src="js/homeType.js"></script>
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script> -->
+  <!-- <script src="js/squareQuery.js"></script> -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+  <body>
+    <div id="viewDiv">
+      <div id="info" class="info"></div>
+    </div>
+    <div id="onClickLoader">
+  		<div class="spinner">
+  			<div class="double-bounce1"></div>
+  			<div class="double-bounce2"></div>
+  		</div>
+  	</div>
+    <div id="queryDiv" class="esri-widget">
+      <b>Нарисуйте рисунок для запроса</b><br />
+      <br />Выберите тип геометрии рисунка:
+      <div class="geometry-options">
+        <button
+          class="esri-widget--button esri-icon-map-pin geometry-button"
+          id="point-geometry-button"
+          value="point"
+          title="Точка"
+        ></button>
+        <button
+          class="esri-widget--button esri-icon-polyline geometry-button"
+          id="line-geometry-button"
+          value="polyline"
+          title="Линия"
+        ></button>
+        <button
+          class="esri-widget--button esri-icon-polygon geometry-button"
+          id="polygon-geometry-button"
+          value="polygon"
+          title="Многоугольник"
+        ></button>
+      </div>
+      <br />
+      <div class="tooltip">
+        <label for="bufferNum">Установите размер области рисунка:</label>
+        <div id="bufferNum"></div>
+      </div>
+      <br />
+      <button class="esri-button" id="clearGeometry" type="button">
+        Очистить
+      </button>
+    </div>
+  </body>
+</html>
