@@ -446,13 +446,15 @@ require([
   function queryStatistics() {
 
     var qTask = new QueryTask({
-      url: queryUrl
+      url: soilURL
+      // url: queryUrl
     });
 
     var params = new Query({
       returnGeometry: true,
       geometry: sketchGeometry,
       distance: bufferSize,
+      // outFields: ["полный адрес"]
       outFields: ["address"]
     });
 
