@@ -454,8 +454,8 @@ require([
       returnGeometry: true,
       geometry: sketchGeometry,
       distance: bufferSize,
-      // outFields: ["полный адрес"]
-      outFields: ["address"]
+      outFields: ["полный адрес"]
+      // outFields: ["address"]
     });
 
     qTask.execute(params)
