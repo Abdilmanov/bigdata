@@ -473,7 +473,7 @@ require([
         //   gas += data[index]['gas'];
         //   internet += data[index]['internet'];
         //   heat += data[index]['heat'];
-        // });
+        });
         // setData(address, water, gas, internet, heat);
         // console.log(data);
         // document.getElementById('dataInfo').classList.display = "inline-block";
