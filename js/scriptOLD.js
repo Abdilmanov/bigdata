@@ -76,7 +76,7 @@ require([
   function makeAjaxCall(address) { //???
     return $.ajax({
       type: "GET",
-      url: 'get_all.php?address=' + encodeURI(address),
+      url: '../get_all.php?address=' + encodeURI(address),
       async: false
     }).responseText;
   }
