@@ -77,7 +77,7 @@ require([
     return $.ajax({
       type: "GET",
       url: 'get_all.php?address=' + encodeURI(address),
-      async: false
+      async: true
     }).responseText;
   }
 
@@ -446,15 +446,13 @@ require([
   function queryStatistics() {
 
     var qTask = new QueryTask({
-      url: soilURL
-      // url: queryUrl
+      url: queryUrl
     });
 
     var params = new Query({
       returnGeometry: true,
       geometry: sketchGeometry,
       distance: bufferSize,
-      // outFields: ["полный адрес"]
       outFields: ["address"]
     });
 
