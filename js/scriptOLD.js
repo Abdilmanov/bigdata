@@ -466,8 +466,9 @@ require([
         let currentAddress;
         response.features.map(function(feature, index) {
           currentAddress = feature.attributes.address;
+          console.log(currentAddress);
           console.log(makeAjaxCall(currentAddress));
-        //   data[index] = JSON.parse(makeAjaxCall(currentAddress));
+          data[index] = JSON.parse(makeAjaxCall(currentAddress));
         //   address += currentAddress + ' ';
         //   water += data[index]['water'];
         //   gas += data[index]['gas'];
