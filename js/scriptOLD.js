@@ -259,7 +259,7 @@ require([
   }
 
   // Добавляет нажатому типу свой цвет
-  function addColor(id)
+  function addColor(id) {
     var index1 = colors.findIndex(el => el.name === id);
     if (index1 == -1) {
       var index2 = colors.findIndex(el => el.name === '');
