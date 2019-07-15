@@ -77,7 +77,7 @@ require([
     return $.ajax({
       type: "GET",
       url: 'get_all.php?address=' + encodeURI(address),
-      async: true
+      async: false
     }).responseText;
   }
 
