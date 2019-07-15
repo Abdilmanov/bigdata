@@ -20,7 +20,7 @@ require([
   Graphic, promiseUtils
 ) {
   // URL to the map service where the identify will be performed
-  var soilURL = "https://gis.uaig.kz/server/rest/services/Map2d/объекты_города3/MapServer";
+  var soilURL = "https://gis.uaig.kz/server/rest/services/Map2d/объекты_города3/MapServer/14";
   var gisBasemapUrl = "https://gis.uaig.kz/server/rest/services/BaseMapAlm_MIL1/MapServer";
   // var queryUrl = "https://gis.uaig.kz/server/rest/services/BaseMapAlm_MIL1/MapServer/13";
   var queryUrl = "https://gis.uaig.kz/server/rest/services/Map2d/Buildings0307/MapServer/0";
