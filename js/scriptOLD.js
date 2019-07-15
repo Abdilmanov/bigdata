@@ -466,17 +466,17 @@ require([
         let currentAddress;
         response.features.map(function(feature, index) {
           currentAddress = feature.attributes.address;
-          console.log(JSON.parse(makeAjaxCall(currentAddress)));
-          data[index] = JSON.parse(makeAjaxCall(currentAddress));
-          address += currentAddress + ' ';
-          water += data[index]['water'];
-          gas += data[index]['gas'];
-          internet += data[index]['internet'];
-          heat += data[index]['heat'];
-        });
-        setData(address, water, gas, internet, heat);
-        console.log(data);
-        document.getElementById('dataInfo').classList.display = "inline-block";
+          console.log(makeAjaxCall(currentAddress));
+        //   data[index] = JSON.parse(makeAjaxCall(currentAddress));
+        //   address += currentAddress + ' ';
+        //   water += data[index]['water'];
+        //   gas += data[index]['gas'];
+        //   internet += data[index]['internet'];
+        //   heat += data[index]['heat'];
+        // });
+        // setData(address, water, gas, internet, heat);
+        // console.log(data);
+        // document.getElementById('dataInfo').classList.display = "inline-block";
       }
 
       // Вызывается каждый раз, когда запрос отколняется
