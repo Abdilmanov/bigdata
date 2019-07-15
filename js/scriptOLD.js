@@ -69,6 +69,8 @@ require([
     view.ui.add(typeHomeExpand, "bottom-left");
     view.ui.add(geometryDrawExpand, "bottom-right");
 
+    addUlLi();
+
   });
 
   function makeAjaxCall(address) { //???
@@ -111,10 +113,9 @@ require([
       findNothing();
       return;
     } else {
-      let color = addColor(response.features[0].attributes.name)
-      console.log(response);
-      peakResults = response.features.map(function(feature) {
+      let color = addColor(response.features[0].attributes.name);
 
+      peakResults = response.features.map(function(feature) {
         feature.symbol = symbol(color);
         return feature;
       });
@@ -258,9 +259,9 @@ require([
   }
 
   // Добавляет нажатому типу свой цвет
-  function addColor(id){
+  function addColor(id)
     var index1 = colors.findIndex(el => el.name === id);
-    if(index1 == -1){
+    if (index1 == -1) {
       var index2 = colors.findIndex(el => el.name === '');
       colors[index2].name = id;
       return colors[index2].color;
