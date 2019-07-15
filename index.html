@@ -10,8 +10,6 @@
   <script src="https://js.arcgis.com/4.12/"></script>
   <script src="js/scriptOLD.js"></script>
   <script src="js/homeType.js"></script>
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.min.js"></script> -->
-  <!-- <script src="js/squareQuery.js"></script> -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
   <body>
@@ -57,5 +55,31 @@
         Очистить
       </button>
     </div>
+    <div id="dataInfo" class='esri-feature__fields esri-feature__content-element'>
+      <table class='esri-widget__table'>
+        <tbody>
+          <tr>
+            <th class='esri-feature__field-header'>Адрес:</th>
+            <td id="address" class='esri-feature__field-data'></td>
+          </tr>
+          <tr>
+            <th class='esri-feature__field-header'>Расход воды:</th>
+            <td id="water" class='esri-feature__field-data'></td>
+          </tr>
+          <tr>
+            <th class='esri-feature__field-header'>Расход газа:</th>
+            <td id="gas" class='esri-feature__field-data'></td>
+          </tr>
+          <tr>
+            <th class='esri-feature__field-header'>Интернет:</th>
+            <td id="internet" class='esri-feature__field-data'></td>
+          </tr>
+          <tr>
+            <th class='esri-feature__field-header'>Расход отопления:</th>
+            <td id="heat" class='esri-feature__field-data'></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>"
   </body>
 </html>

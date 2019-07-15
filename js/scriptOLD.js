@@ -32,29 +32,16 @@ require([
     title: "Тип объекта"
   });
 
-  // При площади
-  geometryLayer = new GraphicsLayer({
-    title: "Рисунок"
-  })
-
   almatyLayer = new TileLayer({
     url: gisBasemapUrl,
     title: "Ком услуги"
   });
-
-  // Создаем объект слоя
-  // var almaty_layer = new FeatureLayer({
-  //   url: soilURL,
-  //   opacity: 0.85
-  // });
 
   var map = new Map({
     layers: [almatyLayer],
     basemap: null
   });
 
-  // map.add(almaty_layer); // подгружаем слой к базовой карте
-  // console.log(almatyLayer);
   var view = new MapView({
     container: "viewDiv",  // Reference to the scene div created in step 5
     map: map,  // Reference to the map object created before the scene
@@ -65,119 +52,32 @@ require([
   var typeHomeExpand = new Expand({
     view: view,
     content: document.getElementById('info'),
-    expandIconClass: "esri-icon-organization"
+    expandIconClass: "esri-icon-organization",
+    expandTooltip: "Отобразить типы зданий"
+  });
+
+  var geometryDrawExpand = new Expand({
+    view: view,
+    content: document.getElementById('queryDiv'),
+    expandIconClass: "esri-icon-authorize",
+    expandTooltip: "Узнать данные по области",
+    expanded: true
   });
 
   view.when(function () {
 
-    // view.ui.add("info", "bottom-left");
     view.ui.add(typeHomeExpand, "bottom-left");
-    view.ui.add([queryDiv], "bottom-right");
-    // // executeIdentifyTask() is called each time the view is clicked //???
-    // view.on("click", executeIdentifyTask);
-    //
-    // // Create identify task for the specified map service
-    // identifyTask = new IdentifyTask(soilURL);
-    //
-    // // Параметры для поиска
-    // params = new IdentifyParameters();
-    // params.tolerance = 3; //Дистанция от точки клика в пикселях
-    // params.layerIds = [14]; //Номера слоев где искать
-    // params.layerOption = "top"; // искать на верхних слоях (IdentifyParameters.LAYER_OPTION_VISIBLE;)
-    // params.width = view.width; // Размеры видимой карты
-    // params.height = view.height;
-
-    addUlLi();
+    view.ui.add(geometryDrawExpand, "bottom-right");
 
   });
 
-
-
-
-  // function makeAjaxCall(address) { //???
-  //   return $.ajax({
-  //     type: "GET",
-  //     url: 'get_all.php?address=' + encodeURI(address),
-  //     async: false
-  //   }).responseText;
-  // }
-
-  // Executes each time the view is clicked
-  // function executeIdentifyTask(event) {
-  //   // Set the geometry to the location of the view click
-  //   params.geometry = event.mapPoint;
-  //   params.mapExtent = view.extent;
-  //   document.getElementById("viewDiv").style.cursor = "wait";
-  //
-  //   // This function returns a promise that resolves to an array of features
-  //   // A custom popupTemplate is set for each feature based on the layer it
-  //   // originates from
-  //
-  //   identifyTask.execute(params).then(function (response) {
-  //
-  //     var results = response.results;
-  //
-  //     return results.map(function (result) {
-  //       var feature = result.feature;
-  //       var layerName = result.layerName;
-  //       let currentAddress = feature.attributes['полный адрес'];
-  //       var data = JSON.parse(makeAjaxCall(currentAddress));
-  //       feature.attributes['water'] = data['water'];
-  //       feature.attributes['gas'] = data['gas'];
-  //       feature.attributes['internet'] = data['internet'];
-  //       feature.attributes['heat'] = data['heat'];
-  //       feature.attributes.layerName = layerName;
-  //       if (layerName === 'Здания и сооружения') {
-  //         feature.popupTemplate = { // autocasts as new PopupTemplate()
-  //         title: "Коммунальные службы",
-  //         content: "<div class='esri-feature__fields esri-feature__content-element'>"+
-  //           "<table class='esri-widget__table'>"+
-  //             "<tbody>"+
-  //                 "<tr>"+
-  //                 "<th class='esri-feature__field-header'>Адрес:</th>"+
-  //                 "<td class='esri-feature__field-data'>{полный адрес}</td>"+
-  //               "</tr>"+
-  //               "<tr>"+
-  //                 "<th class='esri-feature__field-header'>Расход воды:</th>"+
-  //                 "<td class='esri-feature__field-data'>{water}</td>"+
-  //               "</tr>"+
-  //               "<tr>"+
-  //                 "<th class='esri-feature__field-header'>Расход газа:</th>"+
-  //                 "<td class='esri-feature__field-data'>{gas}</td>"+
-  //               "</tr>"+
-  //
-  //               "<tr>"+
-  //                 "<th class='esri-feature__field-header'>Интернет:</th>"+
-  //                 "<td class='esri-feature__field-data'>{internet}</td>"+
-  //               "</tr>"+
-  //               "<tr>"+
-  //                 "<th class='esri-feature__field-header'>Расход отопления:</th>"+
-  //                 "<td class='esri-feature__field-data'>{heat} </td>"+
-  //               "</tr>"+
-  //             "</tbody>"+
-  //           "</table>"+
-  //         "</div>"
-  //         }
-  //
-  //
-  //       }
-  //
-  //       return feature;
-  //
-  //     });
-  //   }).then(showPopup); // Send the array of features to showPopup()
-  //
-  //     // Shows the results of the Identify in a popup once the promise is resolved
-  //   function showPopup(response) {
-  //     if (response.length > 0) {
-  //       view.popup.open({
-  //         features: response,
-  //         location: event.mapPoint
-  //       });
-  //     }
-  //     document.getElementById("viewDiv").style.cursor = "auto";
-  //   }
-  // } //???
+  function makeAjaxCall(address) { //???
+    return $.ajax({
+      type: "GET",
+      url: 'get_all.php?address=' + encodeURI(address),
+      async: false
+    }).responseText;
+  }
 
   // Запрос на arcgis
   function doQuery(name) {
@@ -201,26 +101,39 @@ require([
     qTask.execute(params)
       .then(getResults)
       .catch(promiseRejected);
+
   }
 
   // Вызывается каждый раз, когда запрос прошел
   function getResults(response) {
 
-    let color = addColor(response.features[0].attributes.name)
+    if (response.features.length == 0) {
+      findNothing();
+      return;
+    } else {
+      let color = addColor(response.features[0].attributes.name)
+      console.log(response);
+      peakResults = response.features.map(function(feature) {
 
-    peakResults = response.features.map(function(feature) {
+        feature.symbol = symbol(color);
+        return feature;
+      });
 
-      feature.symbol = symbol(color);
-      return feature;
-    });
-
-    createLayer(peakResults[0].attributes.name, findNameValue(peakResults[0].attributes.name));
+      createLayer(peakResults[0].attributes.name, findNameValue(peakResults[0].attributes.name));
+    }
   }
 
   // Вызывается каждый раз, когда запрос отколняется
   function promiseRejected(error) {
     console.error("Promise rejected: ", error.message);
     onClickLoader.style.display = 'none';
+  }
+
+  // Если ничего не найдено
+  const findNothing = () => {
+    element.checked = false;
+    onClickLoader.style.display = 'none';
+    alert('Данный тип здания не найден, отдалите карту или переместитесь по ней в другое место и попробуйте еще раз');
   }
 
   // Рассшифровка типа дома по ID
@@ -314,10 +227,11 @@ require([
     }// while
   }
 
+  var element; // Нажатый элемент
   // При нажатии на тип
   function checkCheckbox(e) {
-    const element = e.toElement;
-    if (element.checked){
+    element = e.toElement;
+    if (element.checked) {
       doQuery(element.id);
     } else {
       deleteLayer(element.id, element.defaultValue);
@@ -406,31 +320,8 @@ require([
   const bufferLayer = new GraphicsLayer();
   view.map.addMany([bufferLayer, sketchLayer]);
 
-  // let sceneLayer = null;
-  // let sceneLayerView = null;
+  var data = [], water = 0, gas = 0, internet = 0, heat = 0, address = '';
   let bufferSize = 0;
-
-  // // Assign scene layer once view is loaded and initialize UI
-  // view.load().then(function() {
-  //   sceneLayer = view.layers.find(function(layer) {
-  //     return layer.title === "Helsinki textured buildings";
-  //   });
-  //   sceneLayer.outFields = ["buildingMaterial", "yearCompleted"];
-  //
-  //   view.whenLayerView(sceneLayer).then(function(layerView) {
-  //     sceneLayerView = layerView;
-  //     queryDiv.style.display = "block";
-  //   });
-  // });
-
-  // view.watch("updating", function(updating) {
-  //   if (!updating) {
-  //     console.log("upd");
-  //     runQuery();
-  //   }
-  // });
-
-
 
   // use SketchViewModel to draw polygons that are used as a query
   let sketchGeometry = null;
@@ -497,6 +388,8 @@ require([
 
   // Clear the geometry and set the default renderer
   function clearGeometry() {
+    document.getElementById('dataInfo').classList.display = "none";
+    data = [], water = 0, gas = 0, internet = 0, heat = 0, address = '';
     sketchGeometry = null;
     sketchViewModel.cancel();
     sketchLayer.removeAll();
@@ -506,14 +399,12 @@ require([
   // set the geometry query on the visible SceneLayerView
   var debouncedRunQuery = promiseUtils.debounce(function() {
     if (!sketchGeometry) {
-      console.log("runbedreturn");
       return;
     }
 
     updateBufferGraphic(bufferSize);
     return promiseUtils.eachAlways([
-      queryStatistics(),
-      // updateSceneLayer()
+      queryStatistics()
     ]);
   });
 
@@ -551,11 +442,7 @@ require([
     }
   }
 
-  function updateSceneLayer() {// query бычный
-    // const query = sceneLayerView.createQuery();
-    // query.geometry = sketchGeometry;
-    // query.distance = bufferSize;
-    // return sceneLayerView.queryObjectIds(query).then(highlightBuildings);
+  function queryStatistics() {
 
     var qTask = new QueryTask({
       url: queryUrl
@@ -574,74 +461,37 @@ require([
 
       // Вызывается каждый раз, когда запрос прошел
       function getResults(response) {
-        console.log(response);
-        // let color = addColor(response.features[0].attributes.name)
-        //
-        // peakResults = response.features.map(function(feature) {
-        //
-        //   feature.symbol = symbol(color);
-        //   return feature;
-        // });
-
-      }
-
-      // Вызывается каждый раз, когда запрос отколняется
-      function promiseRejected(error) {
-        console.error("Promise rejected: ", error.message);
-        onClickLoader.style.display = 'none';
-      }
-  }
-
-  function queryStatistics() {//???
-    // const query = sceneLayerView.createQuery();
-    // query.geometry = sketchGeometry;
-    // query.distance = bufferSize;
-
-    // return sceneLayerView.queryFeatures(query).then(function(result) {
-    //   const allStats = result.features[0].attributes;
-    // }, console.error);
-
-    var qTask = new QueryTask({
-      url: queryUrl
-    });
-
-    var params = new Query({
-      returnGeometry: true,
-      geometry: sketchGeometry,
-      distance: bufferSize,
-      outFields: ["address"]
-    });
-
-    qTask.execute(params)
-      .then(getResults)
-      .catch(promiseRejected);
-
-      // Вызывается каждый раз, когда запрос прошел
-      function getResults(response) {
-        console.log(response);
-        // let color = addColor(response.features[0].attributes.name)
-        //
-        var allAsd = response.features.map(function(feature) {
-          feature.symbol = {
-            type: "simple-fill",  // autocasts as new SimpleFillSymbol()
-            color: "green",
-            style: "solid",
-            outline: {  // autocasts as new SimpleLineSymbol()
-              color: "green",
-              width: 1
-            }
-          };
+        // console.log(response.features);
+        let currentAddress;
+        response.features.map(function(feature, index) {
+          currentAddress = feature.attributes.address;
+          data[index] = JSON.parse(makeAjaxCall(currentAddress));
+          address += currentAddress + ' ';
+          water += data[index]['water'];
+          gas += data[index]['gas'];
+          internet += data[index]['internet'];
+          heat += data[index]['heat'];
+          //??? makeAjaxCall()
         });
-        geometryLayer.addMany(allAsd);//???
-        view.map.add(geometryLayer);
+        setData(address, water, gas, internet, heat);
+        console.log(data);
+        document.getElementById('dataInfo').classList.display = "inline-block";
       }
-
 
       // Вызывается каждый раз, когда запрос отколняется
       function promiseRejected(error) {
         console.error("Promise rejected: ", error.message);
         onClickLoader.style.display = 'none';
       }
+
+      const setData= (address, water, gas, internet, heat) => {
+        document.getElementById('address').innerHTML = address;
+        document.getElementById('water').innerHTML = water;
+        document.getElementById('gas').innerHTML = gas;
+        document.getElementById('internet').innerHTML = internet;
+        document.getElementById('heat').innerHTML = heat;
+      }
+
   }
 
   //----------------------------------------------------------------

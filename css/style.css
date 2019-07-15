@@ -8,6 +8,11 @@ html, body, #viewDiv {
   background-color: white!important;
 
 }
+
+#dataInfo {
+  display: none;
+}
+
 /*  */
 
 #queryDiv {
