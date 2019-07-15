@@ -66,6 +66,7 @@ require([
 
   view.when(function () {
 
+    view.ui.add("dataInfo", "top-right");
     view.ui.add(typeHomeExpand, "bottom-left");
     view.ui.add(geometryDrawExpand, "bottom-right");
 
@@ -478,6 +479,8 @@ require([
         });
         setData(address, water, gas, internet, heat);
         console.log(data);
+        console.log(address);
+        console.log(water);
         document.getElementById('dataInfo').classList.display = "inline-block";
       }
 
