@@ -443,6 +443,7 @@ require([
     }
   }
 
+  // запрос по зданию(-ям)
   function queryStatistics() {
 
     var qTask = new QueryTask({
