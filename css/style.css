@@ -47,8 +47,10 @@ html, body, #viewDiv {
   background-color: white;
   max-height: 250px;
   overflow: auto;
-  max-width: 450px;
+  width: 250px;
   padding-bottom: 7px;
+  left: 40px;
+  position: absolute;
 }
 /* @media screen and (max-width: 640px) {
   #dataInfo {
@@ -74,6 +76,10 @@ html, body, #viewDiv {
     max-width: 450px;
   }
 } */
+.caption {
+  text-align: center;
+  padding: 5px 0;
+}
 .scroll {
   overflow: auto;
   max-height: 70px;
@@ -93,8 +99,7 @@ html, body, #viewDiv {
 .close {
   float: right;
   display: inline-block;
-  margin: 5px 5px;
-  padding: 2px 5px;
+  padding: 1px 5px;
   color: black;
   background: rgba(76,76,76,0.1);
 }

@@ -174,6 +174,9 @@ require([
       label.setAttribute('for', id);
       // label.id = k+"label";
       label.innerHTML = value;
+      if (el.title) {
+        label.setAttribute('title', el.title);
+      }
       li.appendChild(input);
       // label.appendChild(input);
       li.appendChild(label);
