@@ -390,7 +390,7 @@ require([
 
   // Clear the geometry and set the default renderer
   function clearGeometry() {
-    document.getElementById('dataInfo').classList.display = "none";
+    document.getElementById('dataInfo').style.display = "none";
     data = [], water = 0, gas = 0, internet = '', heat = 0, address = '';
     sketchGeometry = null;
     sketchViewModel.cancel();
@@ -468,9 +468,11 @@ require([
         // console.log(response.features);
         let currentAddress;
         response.features.map(function(feature, index) {
-          currentAddress = feature.attributes.address;
-          data[index] = JSON.parse(makeAjaxCall(currentAddress));
-          data[index].address = currentAddress;
+          if (checkReAddress(data, data[index].address)) {
+            currentAddress = feature.attributes.address;
+            data[index] = JSON.parse(makeAjaxCall(currentAddress));
+            data[index].address = currentAddress;
+          }
         });
         setData(data);
         document.getElementById('dataInfo').style.display = "inline-block";
@@ -481,6 +483,13 @@ require([
       function promiseRejected(error) {
         console.error("Promise rejected: ", error.message);
         onClickLoader.style.display = 'none';
+      }
+
+      const checkReAddress = data, address => {
+        data.findIndex((el) => {
+          if (el === address) return false;
+        })
+        return true;
       }
 
       const setData = data => {
@@ -502,7 +511,7 @@ require([
             g++;
           }
           if (el.internet !== 'Данных по этому дому нет') {
-            if (index == 0) {
+            if (index == 0 || !internet) {
               internet += el.internet;
             } else {
               internet += '; ' + el.internet;
@@ -527,6 +536,7 @@ require([
         } else {
           document.getElementById('gas').innerHTML = 'Данных по этому дому нет';
         }
+        
         if (i > 0) {
           document.getElementById('internet').innerHTML = internet;
         } else {
