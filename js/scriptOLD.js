@@ -447,6 +447,7 @@ require([
   // запрос по зданию(-ям)
   function queryStatistics() {
     onClickLoader.style.display = 'inline-block';
+    document.getElementById('dataInfo').style.display = "none";
     var qTask = new QueryTask({
       url: queryUrl
     });
@@ -486,8 +487,12 @@ require([
       const setData = data => {
         let w = 0, g = 0, i = 0, h = 0;
         console.log(data);
-        data.forEach((el) => {
-          address += el.address + '; ';
+        data.forEach((el, index) => {
+          if (index == 1) {
+            address += el.address;
+          } else {
+            address += '; ' + el.address;
+          }
 
           if (Number(el.water)) {
             water += Number(el.water);
@@ -497,8 +502,12 @@ require([
             gas += Number(el.gas);
             g++;
           }
-          if (Number(el.internet)) {
-            internet += Number(el.internet);
+          if (el.internet !== 'Данных по этому дому нет') {
+            if (index == 1) {
+              internet += el.internet;
+            } else {
+              internet += '; ' + el.internet;
+            }
             i++;
           }
           if (Number(el.heat)) {
