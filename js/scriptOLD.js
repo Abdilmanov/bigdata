@@ -478,7 +478,10 @@ require([
 
       // Вызывается каждый раз, когда запрос прошел
       function getResults(response) {
-
+        if (!response.feature) {
+          alert("В этой зоне нет зданий./n Выделите другое место и попробуйте еще раз.");
+          return;
+        }
         let currentAddress, index = 0;
         response.features.map(function(feature) {
           if (checkReAddress(data, feature.attributes.address)) {
