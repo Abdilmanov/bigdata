@@ -75,7 +75,12 @@ html, body, #viewDiv {
   border-right: 3px solid rgba(0,0,0,0.05);
 }
 .esri-widget__table tr td {
-  width: auto;
+  width: 200px;
+}
+
+tbody, tr:first-child {
+  max-height: 70px;
+  height: auto;
 }
 
 ul.ks-cboxtags {
