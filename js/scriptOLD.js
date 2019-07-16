@@ -446,7 +446,7 @@ require([
 
   // запрос по зданию(-ям)
   function queryStatistics() {
-
+    onClickLoader.style.display = 'inline-block';
     var qTask = new QueryTask({
       url: queryUrl
     });
@@ -470,9 +470,11 @@ require([
           currentAddress = feature.attributes.address;
           data[index] = JSON.parse(makeAjaxCall(currentAddress));
           data[index].address = currentAddress;
+          console.log(data[index].internet);
         });
         setData(data);
-        document.getElementById('dataInfo').classList.display = "inline-block";
+        document.getElementById('dataInfo').style.display = "inline-block";
+        onClickLoader.style.display = 'none';
       }
 
       // Вызывается каждый раз, когда запрос отколняется
@@ -504,6 +506,8 @@ require([
             h++;
           }
         });
+
+        document.getElementById('address').innerHTML = address;
 
         if (w > 0) {
           document.getElementById('water').innerHTML = water;
