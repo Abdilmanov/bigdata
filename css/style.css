@@ -9,14 +9,6 @@ html, body, #viewDiv {
 
 }
 
-#dataInfo {
-  display: none;
-  background-color: white;
-  max-height: 250px;
-  overflow: auto;
-  max-width: 450px;
-}
-
 /*  */
 
 #queryDiv {
@@ -49,6 +41,39 @@ html, body, #viewDiv {
 }
 
 /*  */
+
+#dataInfo {
+  display: none;
+  background-color: white;
+  max-height: 250px;
+  overflow: auto;
+  max-width: 450px;
+  padding-bottom: 7px;
+}
+/* @media screen and (max-width: 640px) {
+  #dataInfo {
+    max-width: 250px;
+    font-size: 16px;
+  }
+  .esri-widget__table tr td, .esri-widget__table tr th {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 1024px) {
+  #dataInfo {
+    font-size: 18px;
+    max-width: 650px;
+  }
+  .esri-widget__table tr td, .esri-widget__table tr th {
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 1824px) {
+  #dataInfo {
+    max-height: 250px;
+    max-width: 450px;
+  }
+} */
 
 .scroll {
   overflow: auto;

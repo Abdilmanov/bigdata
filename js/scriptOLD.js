@@ -67,9 +67,9 @@ require([
 
   view.when(function () {
 
-    view.ui.add("dataInfo", "top-right");
-    view.ui.add(typeHomeExpand, "bottom-left");
-    view.ui.add(geometryDrawExpand, "bottom-right");
+    view.ui.add(typeHomeExpand, "top-left");
+    view.ui.add(geometryDrawExpand, "top-left");
+    view.ui.add("dataInfo", "top-left");
 
     addUlLi();
 
@@ -466,7 +466,7 @@ require([
 
       // Вызывается каждый раз, когда запрос прошел
       function getResults(response) {
-        
+
         let currentAddress, index = 0;
         response.features.map(function(feature) {
           if (checkReAddress(data, feature.attributes.address)) {
