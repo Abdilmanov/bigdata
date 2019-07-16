@@ -485,7 +485,7 @@ require([
         onClickLoader.style.display = 'none';
       }
 
-      const checkReAddress = data, address => {
+      const checkReAddress = (data, address) => {
         data.findIndex((el) => {
           if (el === address) return false;
         })
@@ -536,7 +536,7 @@ require([
         } else {
           document.getElementById('gas').innerHTML = 'Данных по этому дому нет';
         }
-        
+
         if (i > 0) {
           document.getElementById('internet').innerHTML = internet;
         } else {
