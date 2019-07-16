@@ -490,7 +490,7 @@ require([
         if (!data) return true;
         data.forEach((el) => {
           if (el === address) {
-            check true;
+            check = true;
             break;
           };
         })
