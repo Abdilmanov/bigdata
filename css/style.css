@@ -93,8 +93,10 @@ html, body, #viewDiv {
 .close {
   float: right;
   display: inline-block;
+  margin: 5px 5px;
   padding: 2px 5px;
-  background: #ccc;
+  color: black;
+  background: rgba(76,76,76,0.1);
 }
 
 .esri-view-height-less-than-medium .esri-popup__main-container {
