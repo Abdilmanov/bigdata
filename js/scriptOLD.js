@@ -469,16 +469,9 @@ require([
         response.features.map(function(feature, index) {
           currentAddress = feature.attributes.address;
           data[index] = JSON.parse(makeAjaxCall(currentAddress));
-          address += currentAddress + ' ';
-          water += Number(data[index]['water']);
-          gas += Number(data[index]['gas']);
-          internet += Number(data[index]['internet']);
-          heat += Number(data[index]['heat']);
+          data[index].address = currentAddress;
         });
-        setData(address, water, gas, internet, heat);
-        console.log(data);
-        console.log(address);
-        console.log(water);
+        setData(data);
         document.getElementById('dataInfo').classList.display = "inline-block";
       }
 
@@ -488,12 +481,51 @@ require([
         onClickLoader.style.display = 'none';
       }
 
-      const setData= (address, water, gas, internet, heat) => {
-        document.getElementById('address').innerHTML = address;
-        document.getElementById('water').innerHTML = water;
-        document.getElementById('gas').innerHTML = gas;
-        document.getElementById('internet').innerHTML = internet;
-        document.getElementById('heat').innerHTML = heat;
+      const setData = data => {
+        let w = 0, g = 0, i = 0, h = 0;
+        console.log(data);
+        data.forEach((el) => {
+          address += el.address + '; ';
+
+          if (Number(el.water)) {
+            water += Number(el.water);
+            w++;
+          }
+          if (Number(el.gas)) {
+            gas += Number(el.gas);
+            g++;
+          }
+          if (Number(el.internet)) {
+            internet += Number(el.internet);
+            i++;
+          }
+          if (Number(el.heat)) {
+            heat += Number(el.heat);
+            h++;
+          }
+        });
+
+        if (w > 0) {
+          document.getElementById('water').innerHTML = water;
+        } else {
+          document.getElementById('water').innerHTML = 'Данных по этому дому нет';
+        }
+        if (g > 0) {
+          document.getElementById('gas').innerHTML = gas;
+        } else {
+          document.getElementById('gas').innerHTML = 'Данных по этому дому нет';
+        }
+        if (i > 0) {
+          document.getElementById('internet').innerHTML = internet;
+        } else {
+          document.getElementById('internet').innerHTML = 'Данных по этому дому нет';
+        }
+        if (h > 0) {
+          document.getElementById('heat').innerHTML = heat;
+        } else {
+          document.getElementById('heat').innerHTML = 'Данных по этому дому нет';
+        }
+
       }
 
   }
