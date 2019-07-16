@@ -486,11 +486,19 @@ require([
       }
 
       const checkReAddress = (data, address) => {
+        let check;
         if (!data) return true;
-        data.findIndex((el) => {
-          if (el === address) return false;
+        data.forEach((el) => {
+          if (el === address) {
+            check true;
+            break;
+          };
         })
-        return true;
+        if (check) {
+          return false;
+        } else {
+          return true;
+        }
       }
 
       const setData = data => {
