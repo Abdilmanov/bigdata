@@ -468,14 +468,12 @@ require([
         let currentAddress;
         response.features.map(function(feature, index) {
           currentAddress = feature.attributes.address;
-          // console.log(currentAddress);
-          // console.log(makeAjaxCall(currentAddress));
           data[index] = JSON.parse(makeAjaxCall(currentAddress));
           address += currentAddress + ' ';
-          water += number(data[index]['water']);
-          gas += number(data[index]['gas']);
-          internet += number(data[index]['internet']);
-          heat += number(data[index]['heat']);
+          water += Number(data[index]['water']);
+          gas += Number(data[index]['gas']);
+          internet += Number(data[index]['internet']);
+          heat += Number(data[index]['heat']);
         });
         setData(address, water, gas, internet, heat);
         console.log(data);
