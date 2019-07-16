@@ -494,7 +494,7 @@ require([
             return;
           };
         })
-        console.log(el);
+        console.log(address);
         if (check) {
           return false;
         } else {
