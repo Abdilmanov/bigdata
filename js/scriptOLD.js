@@ -83,17 +83,12 @@ require([
         geometryDrawExpand.expanded = true;
     })
 
-    let typeHomeElement = document.querySelector('[aria-label="Отобразить типы зданий"]');
-    let graphicElement = document.querySelector('[aria-label="Узнать данные по области"]');
-    console.log(typeHomeElement);
-    typeHomeElement.addEventListener('click', function() {
-      console.log(1);
-      if (geometryDrawExpand.expanded = true) geometryDrawExpand.expanded = false;
-    })
-    graphicElement.addEventListener('click', function() {
-      console.log(2);
+    if (geometryDrawExpand.expanded = true) {
       if (typeHomeExpand.expanded = true) typeHomeExpand.expanded = false;
-    })
+    }
+    if (typeHomeExpand.expanded = true) {
+      if (geometryDrawExpand.expanded = true) geometryDrawExpand.expanded = false;
+    }
 
   });
 
