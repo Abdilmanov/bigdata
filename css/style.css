@@ -49,6 +49,11 @@ html, body, #viewDiv {
 }
 
 /*  */
+
+.scroll {
+
+}
+
 .info {
   position: relative;
   width: auto;
@@ -63,6 +68,14 @@ html, body, #viewDiv {
 
 .esri-view-height-less-than-medium .esri-popup__main-container {
   max-height: max-content !important;
+}
+.esri-widget__table tr th {
+  width: 100px;
+  text-align: left;
+  border-right: 3px solid rgba(0,0,0,0.05);
+}
+.esri-widget__table tr td {
+  width: auto;
 }
 
 ul.ks-cboxtags {
