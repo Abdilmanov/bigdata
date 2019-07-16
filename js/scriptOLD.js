@@ -93,9 +93,7 @@ require([
     //   console.log(2);
     //   if (typeHomeExpand.expanded = true) typeHomeExpand.expanded = false;
     // })
-    geometryDrawExpand.hasEventListener("click", function(event) {
-      console.log(event);
-    })
+
   });
 
   function makeAjaxCall(address) { //???
@@ -492,7 +490,7 @@ require([
 
       // Вызывается каждый раз, когда запрос прошел
       function getResults(response) {
-        if (!response.feature) {
+        if (!response.features) {
           alert("В этой зоне нет зданий.\nВыделите другое место и попробуйте еще раз.");
           clearGeometry();
           onClickLoader.style.display = 'none';
