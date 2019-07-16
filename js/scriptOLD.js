@@ -489,11 +489,12 @@ require([
         let check;
         if (!data) return true;
         data.forEach((el) => {
-          if (el === address) {
+          if (el.address === address) {
             check = true;
             return;
           };
         })
+        console.log(el);
         if (check) {
           return false;
         } else {
