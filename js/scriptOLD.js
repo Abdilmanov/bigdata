@@ -55,7 +55,8 @@ require([
     content: document.getElementById('info'),
     expandIconClass: "esri-icon-organization",
     expandTooltip: "Отобразить типы зданий",
-    expanded: false
+    id: "homeExpand",
+    expanded: true
   });
 
   var geometryDrawExpand = new Expand({
@@ -63,6 +64,7 @@ require([
     content: document.getElementById('queryDiv'),
     expandIconClass: "esri-icon-authorize",
     expandTooltip: "Узнать данные по области",
+    id: "drawExpand",
     expanded: true
   });
 
@@ -83,12 +85,14 @@ require([
         geometryDrawExpand.expanded = true;
     })
 
-    if (geometryDrawExpand.expanded = true) {
-      if (typeHomeExpand.expanded = true) typeHomeExpand.expanded = false;
-    }
-    if (typeHomeExpand.expanded = true) {
-      if (geometryDrawExpand.expanded = true) geometryDrawExpand.expanded = false;
-    }
+    // typeHomeElement.addEventListener('click', function() {
+    //   console.log(1);
+    //   if (geometryDrawExpand.expanded = true) geometryDrawExpand.expanded = false;
+    // })
+    // graphicElement.addEventListener('click', function() {
+    //   console.log(2);
+    //   if (typeHomeExpand.expanded = true) typeHomeExpand.expanded = false;
+    // })
 
   });
 
