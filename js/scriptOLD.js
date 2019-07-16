@@ -54,7 +54,8 @@ require([
     autoCollapse: true,
     content: document.getElementById('info'),
     expandIconClass: "esri-icon-organization",
-    expandTooltip: "Отобразить типы зданий"
+    expandTooltip: "Отобразить типы зданий",
+    expanded: false
   });
 
   var geometryDrawExpand = new Expand({
@@ -80,6 +81,16 @@ require([
         .getElementById('dataInfo')
         .style.display = 'none';
         geometryDrawExpand.expanded = true;
+    })
+
+    let typeHomeElement = document.querySelector('[aria-label="Отобразить типы зданий"]');
+    let graphicElement = document.querySelector('[aria-label="Узнать данные по области"]');
+
+    typeHomeElement.addEventListener('click', function() {
+      if (geometryDrawExpand.expanded = true) geometryDrawExpand.expanded = false;
+    })
+    graphicElement.addEventListener('click', function() {
+      if (typeHomeExpand.expanded = true) typeHomeExpand.expanded = false;
     })
 
   });
@@ -479,7 +490,8 @@ require([
       // Вызывается каждый раз, когда запрос прошел
       function getResults(response) {
         if (!response.feature) {
-          alert("В этой зоне нет зданий.\n Выделите другое место и попробуйте еще раз.");
+          alert("В этой зоне нет зданий.\nВыделите другое место и попробуйте еще раз.");
+          clearGeometry();
           onClickLoader.style.display = 'none';
           return;
         }
