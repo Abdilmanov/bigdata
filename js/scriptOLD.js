@@ -322,7 +322,7 @@ require([
   const bufferLayer = new GraphicsLayer();
   view.map.addMany([bufferLayer, sketchLayer]);
 
-  var data = [], water = 0, gas = 0, internet = 0, heat = 0, address = '';
+  var data = [], water = 0, gas = 0, internet = '', heat = 0, address = '';
   let bufferSize = 0;
 
   // use SketchViewModel to draw polygons that are used as a query
@@ -391,7 +391,7 @@ require([
   // Clear the geometry and set the default renderer
   function clearGeometry() {
     document.getElementById('dataInfo').classList.display = "none";
-    data = [], water = 0, gas = 0, internet = 0, heat = 0, address = '';
+    data = [], water = 0, gas = 0, internet = '', heat = 0, address = '';
     sketchGeometry = null;
     sketchViewModel.cancel();
     sketchLayer.removeAll();
@@ -487,7 +487,7 @@ require([
         let w = 0, g = 0, i = 0, h = 0;
         console.log(data);
         data.forEach((el, index) => {
-          if (index == 1) {
+          if (index == 0) {
             address += el.address;
           } else {
             address += '; ' + el.address;
@@ -502,7 +502,7 @@ require([
             g++;
           }
           if (el.internet !== 'Данных по этому дому нет') {
-            if (index == 1) {
+            if (index == 0) {
               internet += el.internet;
             } else {
               internet += '; ' + el.internet;

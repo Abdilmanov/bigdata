@@ -12,8 +12,9 @@ html, body, #viewDiv {
 #dataInfo {
   display: none;
   background-color: white;
-  max-height: 450px;
+  max-height: 250px;
   overflow: auto;
+  max-width: 450px;
 }
 
 /*  */
