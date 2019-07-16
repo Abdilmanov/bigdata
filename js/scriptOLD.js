@@ -468,7 +468,7 @@ require([
         // console.log(response.features);
         let currentAddress;
         response.features.map(function(feature, index) {
-          if (checkReAddress(data, data[index].address)) {
+          if (checkReAddress(data, feature.attributes.address)) {
             currentAddress = feature.attributes.address;
             data[index] = JSON.parse(makeAjaxCall(currentAddress));
             data[index].address = currentAddress;
@@ -486,6 +486,7 @@ require([
       }
 
       const checkReAddress = (data, address) => {
+        if (!data) return true;
         data.findIndex((el) => {
           if (el === address) return false;
         })
