@@ -93,10 +93,7 @@ require([
     //   console.log(2);
     //   if (typeHomeExpand.expanded = true) typeHomeExpand.expanded = false;
     // })
-    geometryDrawExpand.on("click", function(event) {
-      console.log(event);
-    })
-    geometryDrawExpand.expand('click', function(event) {
+    geometryDrawExpand.hasEventListener("click", function(event) {
       console.log(event);
     })
   });
