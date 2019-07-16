@@ -103,6 +103,10 @@ html, body, #viewDiv {
   color: black;
   background: rgba(76,76,76,0.1);
 }
+.close:hover {
+  cursor: pointer;
+  background: rgba(76,76,76,0.4);
+}
 
 .esri-view-height-less-than-medium .esri-popup__main-container {
   max-height: max-content !important;
