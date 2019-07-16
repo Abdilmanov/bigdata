@@ -491,7 +491,7 @@ require([
         data.forEach((el) => {
           if (el === address) {
             check = true;
-            break;
+            return;
           };
         })
         if (check) {
