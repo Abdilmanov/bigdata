@@ -479,7 +479,7 @@ require([
       // Вызывается каждый раз, когда запрос прошел
       function getResults(response) {
         if (!response.feature) {
-          alert("В этой зоне нет зданий./n Выделите другое место и попробуйте еще раз.");
+          alert("В этой зоне нет зданий.\n Выделите другое место и попробуйте еще раз.");
           onClickLoader.style.display = 'none';
           return;
         }
