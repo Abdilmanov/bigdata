@@ -471,7 +471,6 @@ require([
           currentAddress = feature.attributes.address;
           data[index] = JSON.parse(makeAjaxCall(currentAddress));
           data[index].address = currentAddress;
-          console.log(data[index].internet);
         });
         setData(data);
         document.getElementById('dataInfo').style.display = "inline-block";
