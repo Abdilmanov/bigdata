@@ -73,6 +73,15 @@ require([
 
     addUlLi();
 
+    document
+    .getElementById('close')
+    .addEventListener('click', function() {
+      document
+        .getElementById('dataInfo')
+        .style.display = 'none';
+        geometryDrawExpand.expanded = true;
+    })
+
   });
 
   function makeAjaxCall(address) { //???
