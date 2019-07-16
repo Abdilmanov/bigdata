@@ -74,13 +74,11 @@ html, body, #viewDiv {
     max-width: 450px;
   }
 } */
-
 .scroll {
   overflow: auto;
   max-height: 70px;
   height: auto;
 }
-
 .info {
   position: relative;
   width: auto;
@@ -91,6 +89,12 @@ html, body, #viewDiv {
   max-width: 640px;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 13px;
+}
+.close {
+  float: right;
+  display: inline-block;
+  padding: 2px 5px;
+  background: #ccc;
 }
 
 .esri-view-height-less-than-medium .esri-popup__main-container {
