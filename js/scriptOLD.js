@@ -51,6 +51,7 @@ require([
 
   var typeHomeExpand = new Expand({
     view: view,
+    autoCollapse: true,
     content: document.getElementById('info'),
     expandIconClass: "esri-icon-organization",
     expandTooltip: "Отобразить типы зданий"
@@ -465,17 +466,19 @@ require([
 
       // Вызывается каждый раз, когда запрос прошел
       function getResults(response) {
-        // console.log(response.features);
-        let currentAddress;
-        response.features.map(function(feature, index) {
+        
+        let currentAddress, index = 0;
+        response.features.map(function(feature) {
           if (checkReAddress(data, feature.attributes.address)) {
             currentAddress = feature.attributes.address;
             data[index] = JSON.parse(makeAjaxCall(currentAddress));
             data[index].address = currentAddress;
+            index++;
           }
         });
         setData(data);
         document.getElementById('dataInfo').style.display = "inline-block";
+        geometryDrawExpand.expanded = false;
         onClickLoader.style.display = 'none';
       }
 
@@ -494,7 +497,6 @@ require([
             return;
           };
         })
-        console.log(address);
         if (check) {
           return false;
         } else {
@@ -504,7 +506,6 @@ require([
 
       const setData = data => {
         let w = 0, g = 0, i = 0, h = 0;
-        console.log(data);
         data.forEach((el, index) => {
           if (index == 0) {
             address += el.address;
