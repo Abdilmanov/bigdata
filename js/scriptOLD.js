@@ -408,6 +408,7 @@ require([
   function bufferVariablesChanged(event) {
     if (event.state == "stop") {
       bufferSize = event.value;
+      clearGeometry();
       runQuery();
     }
   }
@@ -501,6 +502,7 @@ require([
         }
         let currentAddress, index = 0;
         response.features.map(function(feature) {
+          console.log(response.features);
           if (checkReAddress(data, feature.attributes.address)) {
             currentAddress = feature.attributes.address;
             data[index] = JSON.parse(makeAjaxCall(currentAddress));
