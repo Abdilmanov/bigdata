@@ -407,6 +407,9 @@ require([
   function bufferVariablesChanged(event) {
     console.log(this);
     console.log(event);
+    document.getElementById('bufferNum').addEventListener('click', function() {
+      console.log(this);
+    })
     bufferSize = event.value;
     runQuery();
   }
