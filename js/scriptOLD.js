@@ -408,7 +408,7 @@ require([
   function bufferVariablesChanged(event) {
     if (event.state == "stop") {
       bufferSize = event.value;
-      clearGeometry();
+      data = [], water = 0, gas = 0, internet = '', heat = 0, address = '';
       runQuery();
     }
   }
