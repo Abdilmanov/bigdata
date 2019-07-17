@@ -429,10 +429,12 @@ require([
       return;
     }
 
-    updateBufferGraphic(bufferSize);//???
+    // updateBufferGraphic(bufferSize);//???
     // return promiseUtils.eachAlways([
-      queryStatistics()
+    //   queryStatistics()
     // ]);
+    updateBufferGraphic(bufferSize)
+      .then(queryStatistics());
   });
 
   function runQuery() {
