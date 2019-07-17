@@ -52,7 +52,7 @@ require([
   var typeHomeExpand = new Expand({
     view: view,
     autoCollapse: true,
-    content: document.getElementById('info'),
+    content: document.getElementById('homeTypes'),
     expandIconClass: "esri-icon-organization",
     expandTooltip: "Отобразить типы зданий",
     id: "homeExpand",
@@ -70,6 +70,7 @@ require([
 
   view.when(function () {
 
+    view.ui.add(document.getElementById('info'), "top-left");
     view.ui.add(typeHomeExpand, "top-left");
     view.ui.add(geometryDrawExpand, "top-left");
     view.ui.add("dataInfo", "top-left");
@@ -174,7 +175,7 @@ require([
 
   // Вызывается для создания списка типов домов
   const addUlLi = () => {
-    var info = document.getElementById('info');
+    var homeTypes = document.getElementById('homeTypes');
 
     var ul = document.createElement('ul');
     ul.classList.add('ks-cboxtags');
@@ -205,7 +206,7 @@ require([
     })
 
     addArrayColor(homeType.length);
-    info.appendChild(ul);
+    homeTypes.appendChild(ul);
     checkInputs();
 
   }
@@ -342,6 +343,7 @@ require([
   }
 
   //----------------------------------------------------------------
+  
   // add a GraphicsLayer for the sketches and the buffer
   const sketchLayer = new GraphicsLayer();
   // const bufferLayer = new GraphicsLayer();
@@ -503,7 +505,6 @@ require([
         }
         let currentAddress, index = 0;
         response.features.map(function(feature) {
-          console.log(response.features);
           if (checkReAddress(data, feature.attributes.address)) {
             currentAddress = feature.attributes.address;
             data[index] = JSON.parse(makeAjaxCall(currentAddress));
