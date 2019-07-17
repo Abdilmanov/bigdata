@@ -405,6 +405,8 @@ require([
   // get user entered values for buffer
   bufferNumSlider.on("value-change", bufferVariablesChanged);
   function bufferVariablesChanged(event) {
+    console.log(this);
+    console.log(event);
     bufferSize = event.value;
     runQuery();
   }
@@ -429,12 +431,10 @@ require([
       return;
     }
 
-    // updateBufferGraphic(bufferSize);//???
-    // return promiseUtils.eachAlways([
-    //   queryStatistics()
-    // ]);
-    updateBufferGraphic(bufferSize)
-      .then(queryStatistics());
+    updateBufferGraphic(bufferSize);//???
+    return promiseUtils.eachAlways([
+      queryStatistics()
+    ]);
   });
 
   function runQuery() {
