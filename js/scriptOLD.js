@@ -345,7 +345,7 @@ require([
   // add a GraphicsLayer for the sketches and the buffer
   const sketchLayer = new GraphicsLayer();
   // const bufferLayer = new GraphicsLayer();
-  view.map.addMany(sketchLayer);
+  view.map.add(sketchLayer);
   // view.map.addMany([bufferLayer, sketchLayer]);
 
   var data = [], water = 0, gas = 0, internet = '', heat = 0, address = '';
