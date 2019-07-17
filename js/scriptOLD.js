@@ -406,13 +406,10 @@ require([
   // bufferNumSlider.on("value-change", bufferVariablesChanged);
   bufferNumSlider.on("thumb-drag", bufferVariablesChanged);
   function bufferVariablesChanged(event) {
-    console.log(this);
-    console.log(event);
-    document.getElementById('bufferNum').addEventListener('click', function() {
-      console.log(this);
-    })
-    bufferSize = event.value;
-    runQuery();
+    if (event.state == "stop") {
+      bufferSize = event.value;
+      runQuery();
+    }
   }
   // Clear the geometry and set the default renderer
   document
