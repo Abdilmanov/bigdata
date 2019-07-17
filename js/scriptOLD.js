@@ -487,7 +487,7 @@ require([
       distance: bufferSize,
       outFields: ["address"]
     });
-
+    console.log(bufferSize);
     qTask.execute(params)
       .then(getResults)
       .catch(promiseRejected);
