@@ -344,11 +344,12 @@ require([
   //----------------------------------------------------------------
   // add a GraphicsLayer for the sketches and the buffer
   const sketchLayer = new GraphicsLayer();
-  const bufferLayer = new GraphicsLayer();
-  view.map.addMany([bufferLayer, sketchLayer]);
+  // const bufferLayer = new GraphicsLayer();
+  view.map.addMany(sketchLayer);
+  // view.map.addMany([bufferLayer, sketchLayer]);
 
   var data = [], water = 0, gas = 0, internet = '', heat = 0, address = '';
-  let bufferSize = 0;
+  // let bufferSize = 0;
 
   // use SketchViewModel to draw polygons that are used as a query
   let sketchGeometry = null;
@@ -390,28 +391,28 @@ require([
     sketchViewModel.create(geometryType);
   }
 
-  const bufferNumSlider = new Slider({
-    container: "bufferNum",
-    min: 0,
-    max: 500,
-    steps: 1,
-    labelsVisible: true,
-    precision: 0,
-    labelFormatFunction: function(value, type) {
-      return value.toString() + "m";
-    },
-    values: [0]
-  });
+  // const bufferNumSlider = new Slider({
+  //   container: "bufferNum",
+  //   min: 0,
+  //   max: 500,
+  //   steps: 1,
+  //   labelsVisible: true,
+  //   precision: 0,
+  //   labelFormatFunction: function(value, type) {
+  //     return value.toString() + "m";
+  //   },
+  //   values: [0]
+  // });
   // get user entered values for buffer
   // bufferNumSlider.on("value-change", bufferVariablesChanged);
-  bufferNumSlider.on("thumb-drag", bufferVariablesChanged);
-  function bufferVariablesChanged(event) {
-    if (event.state == "stop") {
-      bufferSize = event.value;
-      data = [], water = 0, gas = 0, internet = '', heat = 0, address = '';
-      runQuery();
-    }
-  }
+  // bufferNumSlider.on("thumb-drag", bufferVariablesChanged);
+  // function bufferVariablesChanged(event) {
+  //   if (event.state == "stop") {
+  //     bufferSize = event.value;
+  //     data = [], water = 0, gas = 0, internet = '', heat = 0, address = '';
+  //     runQuery();
+  //   }
+  // }
   // Clear the geometry and set the default renderer
   document
     .getElementById("clearGeometry")
@@ -424,7 +425,7 @@ require([
     sketchGeometry = null;
     sketchViewModel.cancel();
     sketchLayer.removeAll();
-    bufferLayer.removeAll();
+    // bufferLayer.removeAll();
   }
 
   // set the geometry query on the visible SceneLayerView
@@ -433,7 +434,7 @@ require([
       return;
     }
 
-    updateBufferGraphic(bufferSize);//???
+    // updateBufferGraphic(bufferSize);//???
     return promiseUtils.eachAlways([
       queryStatistics()
     ]);
@@ -450,28 +451,28 @@ require([
   }
 
   // update the graphic with buffer
-  function updateBufferGraphic(buffer) {
-    // add a polygon graphic for the buffer
-    if (buffer > 0) {
-      var bufferGeometry = geometryEngine.geodesicBuffer(
-        sketchGeometry,
-        buffer,
-        "meters"
-      );
-      if (bufferLayer.graphics.length === 0) {
-        bufferLayer.add(
-          new Graphic({
-            geometry: bufferGeometry,
-            symbol: sketchViewModel.polygonSymbol
-          })
-        );
-      } else {
-        bufferLayer.graphics.getItemAt(0).geometry = bufferGeometry;
-      }
-    } else {
-      bufferLayer.removeAll();
-    }
-  }
+  // function updateBufferGraphic(buffer) {
+  //   // add a polygon graphic for the buffer
+  //   if (buffer > 0) {
+  //     var bufferGeometry = geometryEngine.geodesicBuffer(
+  //       sketchGeometry,
+  //       buffer,
+  //       "meters"
+  //     );
+  //     if (bufferLayer.graphics.length === 0) {
+  //       bufferLayer.add(
+  //         new Graphic({
+  //           geometry: bufferGeometry,
+  //           symbol: sketchViewModel.polygonSymbol
+  //         })
+  //       );
+  //     } else {
+  //       bufferLayer.graphics.getItemAt(0).geometry = bufferGeometry;
+  //     }
+  //   } else {
+  //     bufferLayer.removeAll();
+  //   }
+  // }
 
   // запрос по зданию(-ям)
   function queryStatistics() {
@@ -484,10 +485,10 @@ require([
     var params = new Query({
       returnGeometry: true,
       geometry: sketchGeometry,
-      distance: bufferSize,
+      // distance: bufferSize,
       outFields: ["address"]
     });
-    console.log(bufferLayer);
+    // console.log(bufferLayer);
     qTask.execute(params)
       .then(getResults)
       .catch(promiseRejected);
