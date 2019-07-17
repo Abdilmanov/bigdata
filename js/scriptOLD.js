@@ -403,7 +403,8 @@ require([
     values: [0]
   });
   // get user entered values for buffer
-  bufferNumSlider.on("value-change", bufferVariablesChanged);
+  // bufferNumSlider.on("value-change", bufferVariablesChanged);
+  bufferNumSlider.on("thumb-drag", bufferVariablesChanged);
   function bufferVariablesChanged(event) {
     console.log(this);
     console.log(event);
