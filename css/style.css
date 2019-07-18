@@ -59,6 +59,7 @@ html, body, #viewDiv {
 }
 .menu-item:hover {
   background: #ffe000;
+  cursor: pointer;
 }
 
 .info {
