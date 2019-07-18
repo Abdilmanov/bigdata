@@ -69,7 +69,7 @@ require([
   });
 
   view.when(function () {
-    let info = document.getele('info');
+    let info = document.getElementById('info');
     view.ui.add(info, "top-left");
     // view.ui.add(typeHomeExpand, "top-left");
     // view.ui.add(geometryDrawExpand, "top-left");
