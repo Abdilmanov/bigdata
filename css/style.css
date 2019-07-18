@@ -43,8 +43,8 @@ html, body, #viewDiv {
 /*  */
 
 .menu {
-  width: 500px;
-  height: 28px;
+  /* width: 404px;
+  height: 30px; */
 }
 .menu-item {
   background: rgba(251, 129, 63);
@@ -66,8 +66,9 @@ html, body, #viewDiv {
 }
 
 .info {
+  display: none;
   background-color: transparent;
-  max-width: 400px;
+  max-width: 404px;
   max-height: 800px;
   height: auto;
   width: 404px;
