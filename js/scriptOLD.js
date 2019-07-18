@@ -69,11 +69,11 @@ require([
   });
 
   view.when(function () {
-
-    view.ui.add(document.getElementById('info'), "top-left");
+    let info = document.getele('info');
+    view.ui.add(info, "top-left");
     view.ui.add(typeHomeExpand, "top-left");
     view.ui.add(geometryDrawExpand, "top-left");
-    view.ui.add("dataInfo", "top-left");
+    view.ui.add("homeInfo", "top-left");
 
     addUlLi();
 
@@ -81,7 +81,7 @@ require([
     .getElementById('close')
     .addEventListener('click', function() {
       document
-        .getElementById('dataInfo')
+        .getElementById('homeInfo')
         .style.display = 'none';
         geometryDrawExpand.expanded = true;
     })
@@ -343,7 +343,7 @@ require([
   }
 
   //----------------------------------------------------------------
-  
+
   // add a GraphicsLayer for the sketches and the buffer
   const sketchLayer = new GraphicsLayer();
   // const bufferLayer = new GraphicsLayer();
@@ -422,7 +422,7 @@ require([
 
   // Clear the geometry and set the default renderer
   function clearGeometry() {
-    document.getElementById('dataInfo').style.display = "none";
+    document.getElementById('homeInfo').style.display = "none";
     data = [], water = 0, gas = 0, internet = '', heat = 0, address = '';
     sketchGeometry = null;
     sketchViewModel.cancel();
@@ -479,7 +479,7 @@ require([
   // запрос по зданию(-ям)
   function queryStatistics() {
     onClickLoader.style.display = 'inline-block';
-    document.getElementById('dataInfo').style.display = "none";
+    document.getElementById('homeInfo').style.display = "none";
     var qTask = new QueryTask({
       url: queryUrl
     });
@@ -513,7 +513,7 @@ require([
           }
         });
         setData(data);
-        document.getElementById('dataInfo').style.display = "inline-block";
+        document.getElementById('homeInfo').style.display = "inline-block";
         geometryDrawExpand.expanded = false;
         onClickLoader.style.display = 'none';
       }
