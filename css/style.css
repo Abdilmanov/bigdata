@@ -43,13 +43,17 @@ html, body, #viewDiv {
 /*  */
 
 .menuHome {
-  
+  width: 50%;
 }
 .menuGraphic {
-
+  width: 50%;
 }
 .info {
-  display: inline-block;
+  max-width: 400px;
+  max-height: 800px;
+  height: auto;
+  position: absolute;
+  left: 45px;
 }
 #dataInfo {
   display: none;
