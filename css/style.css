@@ -43,14 +43,21 @@ html, body, #viewDiv {
 /*  */
 
 .menu {
-  width: 100%;
+  width: 500px;
+  height: 28px;
 }
-.menuItemHome {
-  width: 50%;
+.menu-item {
+  background: #fff;
+  float: left;
+  width: auto;
+  margin-right: 2%;
+  padding: 1%;
+  border: 1px solid #ffe000;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
 }
-.menuItemGraphic {
-  width: 50%;
-}
+
 .info {
   background-color: white;
   max-width: 400px;
