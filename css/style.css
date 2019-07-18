@@ -19,7 +19,6 @@ html, body, #viewDiv {
   overflow-y: auto;
   overflow-x: hidden;
 }
-
 .geometry-options {
   display: flex;
   flex-direction: row;
@@ -126,7 +125,6 @@ html, body, #viewDiv {
   height: auto;
 }
 .homeTypes {
-  display: none;
   width: initial;
   float: left;
   max-height: inherit;
@@ -134,6 +132,9 @@ html, body, #viewDiv {
   background-color: white;
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   font-size: 13px;
+}
+#homeTypes {
+  display: none;
 }
 .close {
   float: right;
