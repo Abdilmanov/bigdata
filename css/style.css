@@ -42,10 +42,13 @@ html, body, #viewDiv {
 
 /*  */
 
-.menuHome {
+.menu {
+  width: 100%;
+}
+.menuItemHome {
   width: 50%;
 }
-.menuGraphic {
+.menuItemGraphic {
   width: 50%;
 }
 .info {
@@ -100,6 +103,7 @@ html, body, #viewDiv {
   height: auto;
 }
 .homeTypes {
+  display: none;
   position: relative;
   width: auto;
   height: auto;
