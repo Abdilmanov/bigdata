@@ -34,16 +34,12 @@ html, body, #viewDiv {
   color: #fff;
 }
 
-#bufferNum {
-  width: 90%;
-  margin: 2.5em auto 0;
-}
-
 /*  */
 
 .menu {
-  /* width: 404px;
-  height: 30px; */
+  position: initial;
+  width: inherit;
+  height: 30px;
 }
 .menu-item {
   background: rgba(251, 129, 63);
@@ -60,13 +56,12 @@ html, body, #viewDiv {
   box-sizing: border-box;
 }
 .menu-item:hover {
-  /* background: #ffe000; */
   cursor: pointer;
 }
-.menu-item:first-child {
+.menu-item :first-child {
   border-radius: 20px 0 0 0;
 }
-.menu-item:last-child {
+.menu-item :last-child {
   border-radius: 0 20px 0 0;
 }
 
@@ -126,6 +121,7 @@ html, body, #viewDiv {
 }
 .homeTypes {
   width: initial;
+  position: initial;
   float: left;
   max-height: inherit;
   overflow-y: scroll;
