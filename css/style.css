@@ -15,7 +15,7 @@ html, body, #viewDiv {
   min-width: 250px;
   font-size: 14px;
   padding: 10px;
-  /* display: none; */
+  display: none;
   overflow-y: auto;
   overflow-x: hidden;
 }
@@ -49,6 +49,7 @@ html, body, #viewDiv {
   width: 50%;
 }
 .info {
+  background-color: white;
   max-width: 400px;
   max-height: 800px;
   height: auto;
