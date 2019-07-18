@@ -57,6 +57,9 @@ html, body, #viewDiv {
   -moz-box-sizing: border-box;
   box-sizing: border-box;
 }
+.menu-item:hover {
+  background: #ffe000;
+}
 
 .info {
   background-color: white;
