@@ -179,6 +179,7 @@ require([
     var homeTypes = document.getElementById('homeTypes');
     var div = document.createElement('div');
     div.setAttribute('id', 'home');
+    div.setAttribute('class', 'homeText');
     div.innerHTML = 'Нажмите на тип здания, которое вас интересует';
     var ul = document.createElement('ul');
     ul.classList.add('ks-cboxtags');
@@ -210,7 +211,7 @@ require([
 
     addArrayColor(homeType.length);
     homeTypes.appendChild(div);
-    div.appendChild(ul);
+    homeTypes.appendChild(ul);
     checkInputs();
 
   }
