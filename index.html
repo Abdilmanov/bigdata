@@ -14,10 +14,40 @@
 </head>
   <body>
     <div id="viewDiv">
-      <div id="homeTypes" class="homeTypes"></div>
       <div id="info" class="info">
+        <div id="homeTypes" class="homeTypes"></div>
+        <div id="menuGraphic" class="menuGraphic">
+          <div id="queryDiv" class="esri-widget">
+            <b>Нарисуйте рисунок для запроса</b><br />
+            <br />Выберите тип геометрии рисунка:
+            <div class="geometry-options">
+              <button
+                class="esri-widget--button esri-icon-map-pin geometry-button"
+                id="point-geometry-button"
+                value="point"
+                title="Точка"
+              ></button>
+              <button
+                class="esri-widget--button esri-icon-polyline geometry-button"
+                id="line-geometry-button"
+                value="polyline"
+                title="Линия"
+              ></button>
+              <button
+                class="esri-widget--button esri-icon-polygon geometry-button"
+                id="polygon-geometry-button"
+                value="polygon"
+                title="Многоугольник"
+              ></button>
+            </div>
+            <br />
+            <button class="esri-button" id="clearGeometry" type="button">
+              Очистить
+            </button>
+          </div>
+        </div>
         <div id="menuHome" class="menuHome">
-          <div id="homeInfo" class='esri-feature__fields esri-feature__content-element'>
+          <div id="dataInfo" class='esri-feature__fields esri-feature__content-element'>
             <table class='esri-widget__table'>
               <tbody>
                 <caption class="caption">
@@ -50,36 +80,6 @@
                 </tr>
               </tbody>
             </table>
-          </div>
-        </div>
-        <div id="menuGraphic" class="menuGraphic">
-          <div id="queryDiv" class="esri-widget">
-            <b>Нарисуйте рисунок для запроса</b><br />
-            <br />Выберите тип геометрии рисунка:
-            <div class="geometry-options">
-              <button
-                class="esri-widget--button esri-icon-map-pin geometry-button"
-                id="point-geometry-button"
-                value="point"
-                title="Точка"
-              ></button>
-              <button
-                class="esri-widget--button esri-icon-polyline geometry-button"
-                id="line-geometry-button"
-                value="polyline"
-                title="Линия"
-              ></button>
-              <button
-                class="esri-widget--button esri-icon-polygon geometry-button"
-                id="polygon-geometry-button"
-                value="polygon"
-                title="Многоугольник"
-              ></button>
-            </div>
-            <br />
-            <button class="esri-button" id="clearGeometry" type="button">
-              Очистить
-            </button>
           </div>
         </div>
       </div>

@@ -51,7 +51,7 @@ html, body, #viewDiv {
 .info {
   display: inline-block;
 }
-#homeInfo {
+#dataInfo {
   display: none;
   background-color: white;
   max-height: 250px;
@@ -62,7 +62,7 @@ html, body, #viewDiv {
   position: absolute;
 }
 /* @media screen and (max-width: 640px) {
-  #homeInfo {
+  #dataInfo {
     max-width: 250px;
     font-size: 16px;
   }
@@ -71,7 +71,7 @@ html, body, #viewDiv {
   }
 }
 @media screen and (max-width: 1024px) {
-  #homeInfo {
+  #dataInfo {
     font-size: 18px;
     max-width: 650px;
   }
@@ -80,7 +80,7 @@ html, body, #viewDiv {
   }
 }
 @media screen and (max-width: 1824px) {
-  #homeInfo {
+  #dataInfo {
     max-height: 250px;
     max-width: 450px;
   }
