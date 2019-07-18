@@ -15,7 +15,9 @@
   <body>
     <div id="viewDiv">
       <div id="info" class="info">
-        <div id="homeTypes" class="homeTypes"></div>
+        <div id="menuHome" class="menuHome">
+          <div id="homeTypes" class="homeTypes"></div>
+        </div>
         <div id="menuGraphic" class="menuGraphic">
           <div id="queryDiv" class="esri-widget">
             <b>Нарисуйте рисунок для запроса</b><br />
@@ -46,41 +48,39 @@
             </button>
           </div>
         </div>
-        <div id="menuHome" class="menuHome">
-          <div id="dataInfo" class='esri-feature__fields esri-feature__content-element'>
-            <table class='esri-widget__table'>
-              <tbody>
-                <caption class="caption">
-                  Информация по зданию(-ям)
-                  <span id="close" class="close">x</span>
-                </caption>
-                <tr>
-                  <th class='esri-feature__field-header'>Адрес:</th>
-                  <td class='esri-feature__field-data'>
-                    <div id="address" class="scroll"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <th class='esri-feature__field-header'>Расход воды:</th>
-                  <td id="water" class='esri-feature__field-data'></td>
-                </tr>
-                <tr>
-                  <th class='esri-feature__field-header'>Расход газа:</th>
-                  <td id="gas" class='esri-feature__field-data'></td>
-                </tr>
-                <tr>
-                  <th class='esri-feature__field-header'>Интернет:</th>
-                  <td class='esri-feature__field-data'>
-                    <div id="internet" class="scroll"></div>
-                  </td>
-                </tr>
-                <tr>
-                  <th class='esri-feature__field-header'>Расход отопления:</th>
-                  <td id="heat" class='esri-feature__field-data'></td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+        <div id="dataInfo" class='esri-feature__fields esri-feature__content-element'>
+          <table class='esri-widget__table'>
+            <tbody>
+              <caption class="caption">
+                Информация по зданию(-ям)
+                <span id="close" class="close">x</span>
+              </caption>
+              <tr>
+                <th class='esri-feature__field-header'>Адрес:</th>
+                <td class='esri-feature__field-data'>
+                  <div id="address" class="scroll"></div>
+                </td>
+              </tr>
+              <tr>
+                <th class='esri-feature__field-header'>Расход воды:</th>
+                <td id="water" class='esri-feature__field-data'></td>
+              </tr>
+              <tr>
+                <th class='esri-feature__field-header'>Расход газа:</th>
+                <td id="gas" class='esri-feature__field-data'></td>
+              </tr>
+              <tr>
+                <th class='esri-feature__field-header'>Интернет:</th>
+                <td class='esri-feature__field-data'>
+                  <div id="internet" class="scroll"></div>
+                </td>
+              </tr>
+              <tr>
+                <th class='esri-feature__field-header'>Расход отопления:</th>
+                <td id="heat" class='esri-feature__field-data'></td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
     </div>
