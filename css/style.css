@@ -35,6 +35,10 @@ html, body, #viewDiv {
   color: #fff;
 }
 
+#clearGeometry {
+  background-color: #fb813f;
+  border: 1px solid #fb813f;
+}
 /*  */
 
 .menu {
@@ -43,7 +47,7 @@ html, body, #viewDiv {
   height: 30px;
 }
 .menu-item {
-  background: rgba(251, 129, 63);
+  background: #fb813f;
   float: left;
   width: 50%;
   color: white;

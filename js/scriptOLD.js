@@ -88,20 +88,20 @@ require([
 
     document.getElementById('close').addEventListener('click', function() {
       dataInfo.style.display = 'none';
-      queryDiv.style.display = 'block';
+      queryDiv.style.display = 'inherit';
     })
 
     menuItemHome.addEventListener('click', function() {
-      if (queryDiv.style.display == 'block') {
+      if (queryDiv.style.display == 'inherit') {
         queryDiv.style.display = 'none';
       }
-      homeTypes.style.display = 'block';
+      homeTypes.style.display = 'inherit';
     })
     menuItemGraphic.addEventListener('click', function() {
-      if (homeTypes.style.display == 'block') {
+      if (homeTypes.style.display == 'inherit') {
         homeTypes.style.display = 'none';
       }
-      queryDiv.style.display = 'block';
+      queryDiv.style.display = 'inherit';
     })
 
     // typeHomeElement.addEventListener('click', function() {
@@ -207,6 +207,8 @@ require([
       id = el.name;
       value = el.value;
       li = document.createElement('li');
+      b = document.createElement('b');
+      br = document.createElement('br');
       input = document.createElement('input');
       label = document.createElement('label');
       input.type = 'checkbox';
@@ -227,7 +229,9 @@ require([
     })
 
     addArrayColor(homeType.length);
-    homeTypes.appendChild(div);
+    b.appendChild(div);
+    b.appendChild(div);
+    homeTypes.appendChild(b);
     homeTypes.appendChild(ul);
     checkInputs();
 
@@ -535,7 +539,7 @@ require([
           }
         });
         setData(data);
-        document.getElementById('dataInfo').style.display = "inline-block";
+        document.getElementById('dataInfo').style.display = "inherit";
         geometryDrawExpand.expanded = false;
         onClickLoader.style.display = 'none';
       }
