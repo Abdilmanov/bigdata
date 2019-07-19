@@ -66,10 +66,10 @@ html, body, #viewDiv {
 }
 .menu-item:hover {
   cursor: pointer;
-  background-color: rgba(251, 129, 63, 0.6);
+  background-color: rgba(251, 129, 63);
   color: white;
 }
-.menu-item:active {
+.menu-item:visited, .menu-item:active {
   cursor: pointer;
   background-color: #fb813f;
   background-color: rgba(251, 129, 63);

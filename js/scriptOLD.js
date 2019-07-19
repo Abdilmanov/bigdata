@@ -86,10 +86,7 @@ require([
 
     addUlLi();
 
-    document.getElementById('close').addEventListener('click', function() {
-      dataInfo.style.display = 'none';
-      queryDiv.style.display = 'inherit';
-    })
+    
 
     menuItemHome.addEventListener('click', function() {
       if (queryDiv.style.display == 'inherit') {
