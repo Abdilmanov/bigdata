@@ -456,25 +456,24 @@ require([
         break;
     }
 
-    const checkActive = a => {
-      switch (a) {
-        case 'point':
-          document.getElementById('point-geometry-button').classList.remove('active');
-          break;
-        case 'line':
-          document.getElementById('line-geometry-button').classList.remove('active');
-          break;
-        case 'point':
-          document.getElementById('polygon-geometry-button').classList.remove('active');
-          break;
-      }
-
-    }
-
     clearGeometry();
     sketchViewModel.create(geometryType);
   }
+  
+  const checkActive = a => {
+    switch (a) {
+      case 'point':
+        document.getElementById('point-geometry-button').classList.remove('active');
+        break;
+      case 'line':
+        document.getElementById('line-geometry-button').classList.remove('active');
+        break;
+      case 'point':
+        document.getElementById('polygon-geometry-button').classList.remove('active');
+        break;
+    }
 
+  }
   // const bufferNumSlider = new Slider({
   //   container: "bufferNum",
   //   min: 0,
