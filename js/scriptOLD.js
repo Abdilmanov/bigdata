@@ -71,7 +71,6 @@ require([
   view.when(function () {
     let info = document.getElementById('info');
     let dataInfo = document.getElementById('dataInfo');
-    let closeDataInfo = document.getElementById('close');
     let queryDiv = document.getElementById('queryDiv');
     let homeTypes = document.getElementById('homeTypes');
     let menuItemHome = document.getElementById('menuItemHome');
@@ -87,7 +86,7 @@ require([
 
     addUlLi();
 
-    closeDataInfo.addEventListener('click', function() {
+    document.getElementById('close').addEventListener('click', function() {
       dataInfo.style.display = 'none';
       queryDiv.style.display = 'block';
     })
