@@ -195,6 +195,10 @@ require([
   const addUlLi = () => {
     var homeTypes = document.getElementById('homeTypes');
     var div = document.createElement('div');
+    var span = document.createElement('span');
+    span.setAttribute('id', 'close2');
+    span.setAttribute('class', 'close');
+    span.innerHTML = 'x';
     div.setAttribute('id', 'home');
     div.setAttribute('class', 'homeText');
     div.innerHTML = 'Нажмите на тип здания, которое вас интересует';
@@ -229,7 +233,7 @@ require([
     })
 
     addArrayColor(homeType.length);
-    b.appendChild(div);
+    div.appendChild(span);
     b.appendChild(div);
     homeTypes.appendChild(b);
     homeTypes.appendChild(ul);

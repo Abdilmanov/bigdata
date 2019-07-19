@@ -66,7 +66,13 @@ html, body, #viewDiv {
 }
 .menu-item:hover {
   cursor: pointer;
+  background-color: rgba(251, 129, 63, 0.6);
+  color: white;
+}
+.menu-item:active {
+  cursor: pointer;
   background-color: #fb813f;
+  background-color: rgba(251, 129, 63, 0.6);
   color: white;
 }
 /* .menu-item :first-child {
@@ -81,7 +87,6 @@ html, body, #viewDiv {
   width: 404px;
   box-shadow: 0 1px 2px rgba(0, 0, 0, 0)!important;
   position: absolute;
-  border: 2px solid #fb813f;
   left: 45px;
 }
 #dataInfo {
@@ -150,11 +155,11 @@ html, body, #viewDiv {
   display: inline-block;
   padding: 1px 5px;
   color: black;
-  background: rgba(76,76,76,0.1);
+  background: rgba(251, 129, 63, 0.1);
 }
 .close:hover {
   cursor: pointer;
-  background: rgba(76,76,76,0.4);
+  background: rgba(251, 129, 63, 0.5);
 }
 
 .esri-view-height-less-than-medium .esri-popup__main-container {
@@ -163,12 +168,14 @@ html, body, #viewDiv {
 .esri-widget__table tr th {
   width: 100px;
   text-align: left;
-  border-right: 3px solid rgba(0,0,0,0.05);
+  border-right: 3px solid rgba(251, 129, 63, 0.5);
 }
 .esri-widget__table tr td {
   width: 200px;
 }
-
+.esri-widget__table tr:nth-child(odd) {
+  background-color: rgba(251, 129, 63, 0.25);
+}
 ul.ks-cboxtags {
   list-style: none;
   padding: 0 0 0 5px;
