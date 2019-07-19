@@ -32,7 +32,7 @@ html, body, #viewDiv {
   border-color: #fb813f;
 }
 .geometry-button:hover {
-  background-color: rgba(251, 129, 63, 0.6);;
+  background-color: white;
 }
 .geometry-button:focus {
   outline: none;
