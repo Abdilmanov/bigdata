@@ -233,8 +233,8 @@ require([
     })
 
     addArrayColor(homeType.length);
-    div.appendChild(span);
     b.appendChild(div);
+    b.appendChild(span);
     homeTypes.appendChild(b);
     homeTypes.appendChild(ul);
     checkInputs();
