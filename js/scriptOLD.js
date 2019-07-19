@@ -70,7 +70,16 @@ require([
 
   view.when(function () {
     let info = document.getElementById('info');
+    let dataInfo = document.getElementById('dataInfo');
+    let closeDataInfo = document.getElementById('close');
+    let queryDiv = document.getElementById('queryDiv');
+    let homeTypes = document.getElementById('homeTypes');
+    let menuItemHome = document.getElementById('menuItemHome');
+    let menuItemGraphic = document.getElementById('menuItemGraphic');
+    let closeDataInfo = document.getElementById('closeDataInfo');
+
     view.ui.add(info, "top-left");
+
     info.style.display = 'block';
     // view.ui.add(typeHomeExpand, "top-left");
     // view.ui.add(geometryDrawExpand, "top-left");
@@ -78,13 +87,22 @@ require([
 
     addUlLi();
 
-    document
-    .getElementById('close')
-    .addEventListener('click', function() {
-      document
-        .getElementById('dataInfo')
-        .style.display = 'none';
-        geometryDrawExpand.expanded = true;
+    closeDataInfo.addEventListener('click', function() {
+      dataInfo.style.display = 'none';
+      queryDiv.style.display = 'block';
+    })
+
+    menuItemHome.addEventListener('click', function() {
+      if (queryDiv.style.display == 'block') {
+        queryDiv.style.display == 'none';
+      }
+      homeTypes.style.display = 'block';
+    })
+    menuItemGraphic.addEventListener('click', function() {
+      if (homeTypes.style.display == 'block') {
+        homeTypes.style.display == 'none';
+      }
+      queryDiv.style.display = 'block';
     })
 
     // typeHomeElement.addEventListener('click', function() {
