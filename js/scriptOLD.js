@@ -214,6 +214,7 @@ require([
     var span = document.createElement('span');
     span.setAttribute('id', 'closeHome');
     span.setAttribute('class', 'close');
+    span.setAttribute('class', 'text');
     span.innerHTML = 'x';
     div.setAttribute('id', 'home');
     div.setAttribute('class', 'homeText');
@@ -435,6 +436,7 @@ require([
     .addEventListener("click", geometryButtonsClickHandler);
   function geometryButtonsClickHandler(event) {
     const geometryType = event.target.value;
+    console.log(geometryType);
     clearGeometry();
     sketchViewModel.create(geometryType);
   }
@@ -469,6 +471,10 @@ require([
   // Clear the geometry and set the default renderer
   function clearGeometry() {
     document.getElementById('dataInfo').style.display = "none";
+    let activeButton = document.querySelector('button active');
+    if (activeButton) {
+      console.log(this);
+    }
     data = [], water = 0, gas = 0, internet = '', heat = 0, address = '';
     sketchGeometry = null;
     sketchViewModel.cancel();

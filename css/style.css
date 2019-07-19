@@ -31,7 +31,7 @@ html, body, #viewDiv {
   border-color: #fb813f;
 }
 .geometry-button:hover {
-  background-color: #fb813f;
+  background-color: rgba(251, 129, 63, 0.6);;
 }
 .geometry-button:focus {
   outline: none;
@@ -79,7 +79,6 @@ html, body, #viewDiv {
   color: white;
 }
 .active {
-  cursor: pointer;
   background-color: rgba(251, 129, 63);
   color: white;
 }
@@ -152,6 +151,9 @@ html, body, #viewDiv {
 #homeTypes {
   display: none;
 }
+.text {
+  color: #fb813f;
+}
 .homeText {
   float: left;
   margin: 2px 0 0 10px;
@@ -161,7 +163,7 @@ html, body, #viewDiv {
   display: inline-block;
   padding: 1px 5px;
   margin-top: 2px;
-  color: black;
+  color: #fb813f;
   background: rgba(251, 129, 63, 0.1);
 }
 .close:hover {
@@ -195,7 +197,7 @@ ul.ks-cboxtags li label{
   display: inline-block;
   background-color: rgba(255, 255, 255, .9);
   border: 2px solid #fb813f;
-  color: #adadad;
+  color: #fb813f;
   border-radius: 25px;
   white-space: nowrap;
   margin: 3px 0px;
@@ -215,6 +217,7 @@ ul.ks-cboxtags li label {
 
 ul.ks-cboxtags li label::before {
   display: inline-block;
+  color: #adadad;
   font-style: normal;
   font-variant: normal;
   text-rendering: auto;
