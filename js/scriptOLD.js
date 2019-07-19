@@ -75,7 +75,8 @@ require([
     let homeTypes = document.getElementById('homeTypes');
     let menuItemHome = document.getElementById('menuItemHome');
     let menuItemGraphic = document.getElementById('menuItemGraphic');
-    let closeDataInfo = document.getElementById('closeDataInfo');
+    let closeGraphic = document.getElementById('closeGraphic');
+    let closeHome = document.getElementById('closeHome');
 
     view.ui.add(info, "top-left");
 
@@ -86,10 +87,18 @@ require([
 
     addUlLi();
 
-
-
+    closeHome.addEventListener('click', function() {
+      homeTypes.style.display = 'none';
+    })
+    closeGraphic.addEventListener('click', function() {
+      if (dataInfo.style.display == 'inherit') {
+        dataInfo.style.display = 'none';
+      }
+      queryDiv.style.display = 'none';
+    })
     menuItemHome.addEventListener('click', function() {
       menuItemHome.classList.add('active');
+      menuItemHome.classList.add('border-top');
       if (queryDiv.style.display == 'inherit') {
         menuItemHome.classList.remove('active');
         queryDiv.style.display = 'none';
@@ -97,7 +106,8 @@ require([
       homeTypes.style.display = 'inherit';
     })
     menuItemGraphic.addEventListener('click', function() {
-      menuItemGraphic.classList.add('.active');
+      menuItemGraphic.classList.add('active');
+      menuItemGraphic.classList.add('border-top');
       if (homeTypes.style.display == 'inherit') {
         menuItemGraphic.classList.remove('active');
         homeTypes.style.display = 'none';
@@ -197,7 +207,7 @@ require([
     var homeTypes = document.getElementById('homeTypes');
     var div = document.createElement('div');
     var span = document.createElement('span');
-    span.setAttribute('id', 'close2');
+    span.setAttribute('id', 'closeHome');
     span.setAttribute('class', 'close');
     span.innerHTML = 'x';
     div.setAttribute('id', 'home');
@@ -545,7 +555,7 @@ require([
         });
         setData(data);
         document.getElementById('dataInfo').style.display = "inherit";
-        // document.getElementById('dataInfo').style.display = "inherit";
+        queryDiv.classList.add('border-bottom');
         geometryDrawExpand.expanded = false;
         onClickLoader.style.display = 'none';
       }

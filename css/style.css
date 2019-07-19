@@ -46,7 +46,16 @@ html, body, #viewDiv {
   border: 1px solid #fb813f;
 }
 /*  */
-
+.border-bottom {
+  border-width: 2px 2px 1px 2px;
+  border-style: solid;
+  border-color: #fb813f
+}
+.border-top {
+  border-width: 1px 2px 2px 2px;
+  border-style: solid;
+  border-color: #fb813f
+}
 .menu {
   position: initial;
   width: inherit;
@@ -96,9 +105,6 @@ html, body, #viewDiv {
   width: initial;
   padding-bottom: 7px;
   position: relative;
-  border-width: 1px 2px 2px 2px;
-  border-style: solid;
-  border-color: #fb813f;
 }
 /* @media screen and (max-width: 640px) {
   #dataInfo {
@@ -147,12 +153,14 @@ html, body, #viewDiv {
   display: none;
 }
 .homeText {
-
+  float: left;
+  margin: 2px 0 0 10px;
 }
 .close {
   float: right;
   display: inline-block;
   padding: 1px 5px;
+  margin-top: 2px;
   color: black;
   background: rgba(251, 129, 63, 0.1);
 }
@@ -177,7 +185,7 @@ html, body, #viewDiv {
 }
 ul.ks-cboxtags {
   list-style: none;
-  padding: 0 0 0 5px;
+  padding: 15px 0 0 5px;
   margin-top: 5px;
 }
 ul.ks-cboxtags li{
