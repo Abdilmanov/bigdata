@@ -96,21 +96,19 @@ require([
       queryDiv.style.display = 'none';
     })
     menuItemHome.addEventListener('click', function() {
-      homeTypes.classList.add('active');
-      homeTypes.classList.add('border-top');
       if (queryDiv.style.display == 'inherit') {
         queryDiv.classList.remove('active');
         queryDiv.style.display = 'none';
       }
+      menuItemHome.classList.add('active');
       homeTypes.style.display = 'inherit';
     })
     menuItemGraphic.addEventListener('click', function() {
-      queryDiv.classList.add('active');
-      queryDiv.classList.add('border-top');
       if (homeTypes.style.display == 'inherit') {
         homeTypes.classList.remove('active');
         homeTypes.style.display = 'none';
       }
+      menuItemGraphic.classList.add('active');
       queryDiv.style.display = 'inherit';
     })
 
@@ -554,7 +552,6 @@ require([
         });
         setData(data);
         document.getElementById('dataInfo').style.display = "inherit";
-        queryDiv.classList.add('border-bottom');
         geometryDrawExpand.expanded = false;
         onClickLoader.style.display = 'none';
       }
