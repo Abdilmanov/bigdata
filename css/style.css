@@ -28,6 +28,13 @@ html, body, #viewDiv {
   border-style: solid;
   border-width: 1px;
   border-image: none;
+  border-color: #fb813f;
+}
+.geometry-button:hover {
+  background-color: #fb813f;
+}
+.geometry-button:focus {
+  outline: none;
 }
 .geometry-button-selected {
   background: #4c4c4c;
@@ -59,10 +66,12 @@ html, body, #viewDiv {
 }
 .menu-item:hover {
   cursor: pointer;
-}
-.menu-item :first-child {
   background-color: #fb813f;
+  color: white;
 }
+/* .menu-item :first-child {
+  background-color: #fb813f;
+} */
 
 .info {
   display: none;
@@ -83,6 +92,9 @@ html, body, #viewDiv {
   width: initial;
   padding-bottom: 7px;
   position: relative;
+  border-width: 1px 2px 2px 2px;
+  border-style: solid;
+  border-color: #fb813f;
 }
 /* @media screen and (max-width: 640px) {
   #dataInfo {

@@ -540,6 +540,7 @@ require([
         });
         setData(data);
         document.getElementById('dataInfo').style.display = "inherit";
+        // document.getElementById('dataInfo').style.display = "inherit";
         geometryDrawExpand.expanded = false;
         onClickLoader.style.display = 'none';
       }
