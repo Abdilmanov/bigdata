@@ -439,33 +439,33 @@ require([
     const geometryType = event.target.value;
     console.log(geometryType);
     switch (geometryType) {
-      let point = document.getElementById('point-geometry-button');
-      let line = document.getElementById('line-geometry-button');
-      let polygon = document.getElementById('polygon-geometry-button');
+
+
+
       case 'point':
         if (!checkActive('line')) checkActive('polygon');
-        point.classList.add('active');
+        document.getElementById('point-geometry-button').classList.add('active');
         break;
       case 'polyline':
         if (!checkActive('point')) checkActive('polygon');
-        line.classList.add('active');
+        document.getElementById('line-geometry-button').classList.add('active');
         break;
       case 'polygon':
         if (!checkActive('point')) checkActive('line');
-        polygon.classList.add('active');
+        document.getElementById('polygon-geometry-button').classList.add('active');
         break;
     }
 
     const checkActive = a => {
       switch (a) {
         case 'point':
-          point.classList.remove('active');
+          document.getElementById('point-geometry-button').classList.remove('active');
           break;
         case 'line':
-          line.classList.remove('active');
+          document.getElementById('line-geometry-button').classList.remove('active');
           break;
         case 'point':
-          polygon.classList.remove('active');
+          document.getElementById('polygon-geometry-button').classList.remove('active');
           break;
       }
 
