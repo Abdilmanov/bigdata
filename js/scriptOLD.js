@@ -96,19 +96,19 @@ require([
       queryDiv.style.display = 'none';
     })
     menuItemHome.addEventListener('click', function() {
-      menuItemHome.classList.add('active');
-      menuItemHome.classList.add('border-top');
+      homeTypes.classList.add('active');
+      homeTypes.classList.add('border-top');
       if (queryDiv.style.display == 'inherit') {
-        menuItemHome.classList.remove('active');
+        queryDiv.classList.remove('active');
         queryDiv.style.display = 'none';
       }
       homeTypes.style.display = 'inherit';
     })
     menuItemGraphic.addEventListener('click', function() {
-      menuItemGraphic.classList.add('active');
-      menuItemGraphic.classList.add('border-top');
+      queryDiv.classList.add('active');
+      queryDiv.classList.add('border-top');
       if (homeTypes.style.display == 'inherit') {
-        menuItemGraphic.classList.remove('active');
+        homeTypes.classList.remove('active');
         homeTypes.style.display = 'none';
       }
       queryDiv.style.display = 'inherit';
