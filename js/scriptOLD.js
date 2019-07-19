@@ -97,7 +97,7 @@ require([
     })
     menuItemHome.addEventListener('click', function() {
       if (queryDiv.style.display == 'inherit') {
-        queryDiv.classList.remove('active');
+        menuItemGraphic.classList.remove('active');
         queryDiv.style.display = 'none';
       }
       menuItemHome.classList.add('active');
@@ -105,7 +105,7 @@ require([
     })
     menuItemGraphic.addEventListener('click', function() {
       if (homeTypes.style.display == 'inherit') {
-        homeTypes.classList.remove('active');
+        menuItemHome.classList.remove('active');
         homeTypes.style.display = 'none';
       }
       menuItemGraphic.classList.add('active');
