@@ -86,16 +86,20 @@ require([
 
     addUlLi();
 
-    
+
 
     menuItemHome.addEventListener('click', function() {
+      menuItemHome.classList.add('active');
       if (queryDiv.style.display == 'inherit') {
+        menuItemHome.classList.remove('active');
         queryDiv.style.display = 'none';
       }
       homeTypes.style.display = 'inherit';
     })
     menuItemGraphic.addEventListener('click', function() {
+      menuItemGraphic.classList.add('.active');
       if (homeTypes.style.display == 'inherit') {
+        menuItemGraphic.classList.remove('active');
         homeTypes.style.display = 'none';
       }
       queryDiv.style.display = 'inherit';

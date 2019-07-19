@@ -69,9 +69,8 @@ html, body, #viewDiv {
   background-color: rgba(251, 129, 63);
   color: white;
 }
-.menu-item:visited, .menu-item:active {
+.active {
   cursor: pointer;
-  background-color: #fb813f;
   background-color: rgba(251, 129, 63);
   color: white;
 }
