@@ -91,9 +91,14 @@ require([
       if (menuItemGraphic.classList.toggle('active')) {
         menuItemGraphic.classList.remove('active');
       }
+
+    })
+    document.getElementById('closeGraphic').addEventListener('click', function() {
+      queryDiv.style.display = 'none';
       if (menuItemHome.classList.toggle('active')) {
         menuItemHome.classList.remove('active');
       }
+
     })
     closeGraphic.addEventListener('click', function() {
       if (dataInfo.style.display == 'inherit') {
