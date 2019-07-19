@@ -88,10 +88,10 @@ require([
 
     document.getElementById('closeHome').addEventListener('click', function() {
       homeTypes.style.display = 'none';
-      if (menuItemGraphic.classList.togle('active')) {
+      if (menuItemGraphic.classList.toggle('active')) {
         menuItemGraphic.classList.remove('active');
       }
-      if (menuItemHome.classList.togle('active')) {
+      if (menuItemHome.classList.toggle('active')) {
         menuItemHome.classList.remove('active');
       }
     })
@@ -437,11 +437,7 @@ require([
     .addEventListener("click", geometryButtonsClickHandler);
   function geometryButtonsClickHandler(event) {
     const geometryType = event.target.value;
-    console.log(geometryType);
     switch (geometryType) {
-
-
-
       case 'point':
         if (!checkActive('line')) checkActive('polygon');
         document.getElementById('point-geometry-button').classList.add('active');
@@ -451,7 +447,7 @@ require([
         document.getElementById('line-geometry-button').classList.add('active');
         break;
       case 'polygon':
-        if (!checkActive('point')) checkActive('line');
+        if (!checkActive('point')) checkActive('polyline');
         document.getElementById('polygon-geometry-button').classList.add('active');
         break;
     }
@@ -459,7 +455,7 @@ require([
     clearGeometry();
     sketchViewModel.create(geometryType);
   }
-  
+
   const checkActive = a => {
     switch (a) {
       case 'point':
