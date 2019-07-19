@@ -213,8 +213,8 @@ require([
     var div = document.createElement('div');
     var span = document.createElement('span');
     span.setAttribute('id', 'closeHome');
-    span.setAttribute('class', 'close');
     span.setAttribute('class', 'text');
+    span.classList.add('close');
     span.innerHTML = 'x';
     div.setAttribute('id', 'home');
     div.setAttribute('class', 'homeText');
