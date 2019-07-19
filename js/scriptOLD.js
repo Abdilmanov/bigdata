@@ -88,6 +88,11 @@ require([
 
     document.getElementById('closeHome').addEventListener('click', function() {
       homeTypes.style.display = 'none';
+      if (menuItemGraphic.classList.togle('active')) {
+        menuItemGraphic.classList.remove('active');
+      } else if (menuItemHome.classList.togle('active')) {
+        menuItemHome.classList.remove('active');
+      }
     })
     closeGraphic.addEventListener('click', function() {
       if (dataInfo.style.display == 'inherit') {
@@ -107,6 +112,9 @@ require([
       if (homeTypes.style.display == 'inherit') {
         menuItemHome.classList.remove('active');
         homeTypes.style.display = 'none';
+        if (dataInfo.style.display == 'inherit') {
+          dataInfo.style.display = 'none';
+        }
       }
       menuItemGraphic.classList.add('active');
       queryDiv.style.display = 'inherit';
