@@ -93,13 +93,13 @@ require([
 
     menuItemHome.addEventListener('click', function() {
       if (queryDiv.style.display == 'block') {
-        queryDiv.style.display == 'none';
+        queryDiv.style.display = 'none';
       }
       homeTypes.style.display = 'block';
     })
     menuItemGraphic.addEventListener('click', function() {
       if (homeTypes.style.display == 'block') {
-        homeTypes.style.display == 'none';
+        homeTypes.style.display = 'none';
       }
       queryDiv.style.display = 'block';
     })
