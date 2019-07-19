@@ -88,16 +88,11 @@ require([
 
     document.getElementById('closeHome').addEventListener('click', function() {
       homeTypes.style.display = 'none';
-      if (menuItemGraphic.classList.toggle('active')) {
-        menuItemGraphic.classList.remove('active');
-      }
-
+      menuItemGraphic.classList.remove('active');
     })
     document.getElementById('closeGraphic').addEventListener('click', function() {
       queryDiv.style.display = 'none';
-      if (menuItemHome.classList.toggle('active')) {
-        menuItemHome.classList.remove('active');
-      }
+      menuItemHome.classList.remove('active');
 
     })
     closeGraphic.addEventListener('click', function() {
