@@ -76,7 +76,6 @@ require([
     let menuItemHome = document.getElementById('menuItemHome');
     let menuItemGraphic = document.getElementById('menuItemGraphic');
     let closeGraphic = document.getElementById('closeGraphic');
-    let closeHome = document.getElementById('closeHome');
 
     view.ui.add(info, "top-left");
 
@@ -87,7 +86,7 @@ require([
 
     addUlLi();
 
-    closeHome.addEventListener('click', function() {
+    document.getElementById('closeHome').addEventListener('click', function() {
       homeTypes.style.display = 'none';
     })
     closeGraphic.addEventListener('click', function() {
