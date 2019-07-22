@@ -443,7 +443,7 @@ require([
         break;
       case 'polygon':
         checkActive('point');
-        checkActive('polyline');
+        checkActive('line');
         document.getElementById('polygon-geometry-button').classList.add('active');
         break;
     }
