@@ -91,16 +91,18 @@ require([
       menuItemHome.classList.remove('active');
     })
     document.getElementById('closeGraphic').addEventListener('click', function() {
-      queryDiv.style.display = 'none';
-      menuItemGraphic.classList.remove('active');
-
-    })
-    closeGraphic.addEventListener('click', function() {
       if (dataInfo.style.display == 'inherit') {
         dataInfo.style.display = 'none';
       }
       queryDiv.style.display = 'none';
+      menuItemGraphic.classList.remove('active');
     })
+    // closeGraphic.addEventListener('click', function() {
+    //   if (dataInfo.style.display == 'inherit') {
+    //     dataInfo.style.display = 'none';
+    //   }
+    //   queryDiv.style.display = 'none';
+    // })
     menuItemHome.addEventListener('click', function() {
       if (queryDiv.style.display == 'inherit') {
         menuItemGraphic.classList.remove('active');
@@ -120,15 +122,6 @@ require([
       menuItemGraphic.classList.add('active');
       queryDiv.style.display = 'inherit';
     })
-
-    // typeHomeElement.addEventListener('click', function() {
-    //   console.log(1);
-    //   if (geometryDrawExpand.expanded = true) geometryDrawExpand.expanded = false;
-    // })
-    // graphicElement.addEventListener('click', function() {
-    //   console.log(2);
-    //   if (typeHomeExpand.expanded = true) typeHomeExpand.expanded = false;
-    // })
 
   });
 
@@ -439,15 +432,18 @@ require([
     const geometryType = event.target.value;
     switch (geometryType) {
       case 'point':
-        if (!checkActive('line')) checkActive('polygon');
+        checkActive('line');
+        checkActive('polygon');
         document.getElementById('point-geometry-button').classList.add('active');
         break;
       case 'polyline':
-        if (!checkActive('point')) checkActive('polygon');
+        checkActive('point');
+        checkActive('polygon');
         document.getElementById('line-geometry-button').classList.add('active');
         break;
       case 'polygon':
-        if (!checkActive('point')) checkActive('polyline');
+        checkActive('point');
+        checkActive('polyline');
         document.getElementById('polygon-geometry-button').classList.add('active');
         break;
     }
@@ -464,7 +460,7 @@ require([
       case 'line':
         document.getElementById('line-geometry-button').classList.remove('active');
         break;
-      case 'point':
+      case 'polygon':
         document.getElementById('polygon-geometry-button').classList.remove('active');
         break;
     }
