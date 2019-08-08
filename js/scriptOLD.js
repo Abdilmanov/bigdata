@@ -406,6 +406,7 @@ require([
   });
 
   sketchViewModel.on("create", function(event) {
+    console.log(event);
     if (event.state === "complete") {
       sketchGeometry = event.graphic.geometry;
       runQuery();
@@ -413,6 +414,7 @@ require([
   });
 
   sketchViewModel.on("update", function(event) {
+    console.log(event);
     if (event.state !== "cancel" && event.graphics.length) {
       sketchGeometry = event.graphics[0].geometry;
       runQuery();
@@ -450,6 +452,8 @@ require([
 
     clearGeometry();
     sketchViewModel.create(geometryType);
+    console.log(sketchViewModel);
+    console.log(sketchLayer);
   }
 
   const checkActive = a => {
