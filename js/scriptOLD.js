@@ -10,13 +10,13 @@ require([
   "esri/layers/GraphicsLayer",
   "esri/widgets/Expand",
   "esri/widgets/Sketch/SketchViewModel",
-  "esri/widgets/Slider",
+  // "esri/widgets/Slider",
   "esri/geometry/geometryEngine",
   "esri/Graphic",
   "esri/core/promiseUtils"
 ], function (
   Map, MapView, FeatureLayer, IdentifyTask, IdentifyParameters, TileLayer,
-  QueryTask, Query, GraphicsLayer, Expand, SketchViewModel, Slider, geometryEngine,
+  QueryTask, Query, GraphicsLayer, Expand, SketchViewModel, geometryEngine,
   Graphic, promiseUtils
 ) {
   // URL to the map service where the identify will be performed
@@ -520,7 +520,8 @@ require([
   });
 
   function runQuery() {
-    debouncedRunQuery().catch((error) => {
+    debouncedRunQuery()
+      .catch((error) => {
       if (error.name === "AbortError") {
         return;
       }
