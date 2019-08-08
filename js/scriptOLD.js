@@ -406,6 +406,8 @@ require([
   });
 
   sketchViewModel.on("create", function(event) {
+    console.log(sketchViewModel);
+    console.log(sketchLayer);
     console.log(event);
     if (event.state === "complete") {
       sketchGeometry = event.graphic.geometry;
@@ -452,8 +454,7 @@ require([
 
     clearGeometry();
     sketchViewModel.create(geometryType);
-    console.log(sketchViewModel);
-    console.log(sketchLayer);
+
   }
 
   const checkActive = a => {
